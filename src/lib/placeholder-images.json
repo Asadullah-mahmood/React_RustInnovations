@@ -1,3 +1,130 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-home",
+      "description": "Abstract modern architecture",
+      "imageUrl": "https://picsum.photos/seed/100/1920/1080",
+      "imageHint": "modern architecture"
+    },
+    {
+      "id": "service-strategy",
+      "description": "People collaborating around a whiteboard",
+      "imageUrl": "https://picsum.photos/seed/101/600/400",
+      "imageHint": "team meeting"
+    },
+    {
+      "id": "service-development",
+      "description": "Close-up of code on a screen",
+      "imageUrl": "https://picsum.photos/seed/102/600/400",
+      "imageHint": "code screen"
+    },
+    {
+      "id": "service-design",
+      "description": "UI/UX design sketches and wireframes",
+      "imageUrl": "https://picsum.photos/seed/103/600/400",
+      "imageHint": "design sketch"
+    },
+    {
+      "id": "service-marketing",
+      "description": "Chart showing upward trend",
+      "imageUrl": "https://picsum.photos/seed/104/600/400",
+      "imageHint": "growth chart"
+    },
+    {
+      "id": "service-data",
+      "description": "Abstract data visualization",
+      "imageUrl": "https://picsum.photos/seed/105/600/400",
+      "imageHint": "data visualization"
+    },
+    {
+      "id": "service-cloud",
+      "description": "Server room with glowing lights",
+      "imageUrl": "https://picsum.photos/seed/106/600/400",
+      "imageHint": "server room"
+    },
+    {
+      "id": "about-mission",
+      "description": "Mountain peak at sunrise",
+      "imageUrl": "https://picsum.photos/seed/201/1200/800",
+      "imageHint": "mountain sunrise"
+    },
+    {
+      "id": "team-member1",
+      "description": "Portrait of a confident business person",
+      "imageUrl": "https://picsum.photos/seed/301/400/400",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "team-member2",
+      "description": "Portrait of a creative professional",
+      "imageUrl": "https://picsum.photos/seed/302/400/400",
+      "imageHint": "creative person"
+    },
+    {
+      "id": "team-member3",
+      "description": "Portrait of a tech lead",
+      "imageUrl": "https://picsum.photos/seed/303/400/400",
+      "imageHint": "tech person"
+    },
+    {
+      "id": "team-member4",
+      "description": "Portrait of a marketing expert",
+      "imageUrl": "https://picsum.photos/seed/304/400/400",
+      "imageHint": "marketing expert"
+    },
+    {
+      "id": "team-member5",
+      "description": "Portrait of a project manager",
+      "imageUrl": "https://picsum.photos/seed/305/400/400",
+      "imageHint": "project manager"
+    },
+    {
+      "id": "team-member6",
+      "description": "Portrait of a data scientist",
+      "imageUrl": "https://picsum.photos/seed/306/400/400",
+      "imageHint": "data scientist"
+    },
+    {
+      "id": "product-alpha",
+      "description": "Sleek, futuristic electronic device",
+      "imageUrl": "https://picsum.photos/seed/401/500/500",
+      "imageHint": "futuristic device"
+    },
+    {
+      "id": "product-beta",
+      "description": "Complex industrial machinery",
+      "imageUrl": "https://picsum.photos/seed/402/500/500",
+      "imageHint": "industrial machinery"
+    },
+    {
+      "id": "product-gamma",
+      "description": "Advanced software dashboard on a screen",
+      "imageUrl": "https://picsum.photos/seed/403/500/500",
+      "imageHint": "software dashboard"
+    },
+    {
+      "id": "product-delta",
+      "description": "A powerful server rack",
+      "imageUrl": "https://picsum.photos/seed/404/500/500",
+      "imageHint": "server rack"
+    },
+    {
+      "id": "media-center-hero",
+      "description": "Global news network connections",
+      "imageUrl": "https://picsum.photos/seed/501/1920/600",
+      "imageHint": "global network"
+    },
+    {
+      "id": "testimonial1",
+      "description": "Portrait of a satisfied female CEO",
+      "imageUrl": "https://picsum.photos/seed/601/100/100",
+      "imageHint": "business woman"
+    },
+    {
+      "id": "testimonial2",
+      "description": "Portrait of a satisfied male CTO",
+      "imageUrl": "https://picsum.photos/seed/602/100/100",
+      "imageHint": "tech professional"
+    }
+  ]
 }
