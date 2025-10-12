@@ -40,7 +40,7 @@ const testimonials = [
     image: PlaceHolderImages.find(p => p.id === 'testimonial1')!.imageUrl,
     imageHint: PlaceHolderImages.find(p => p.id === 'testimonial1')!.imageHint,
     quote:
-      "Apex Solutions transformed our digital infrastructure. Their expertise and dedication are second to none. We've seen a 200% increase in efficiency.",
+      "Rust Innovations transformed our digital infrastructure. Their expertise and dedication are second to none. We've seen a 200% increase in efficiency.",
   },
   {
     name: 'Marcus Thorne',
@@ -48,7 +48,7 @@ const testimonials = [
     image: PlaceHolderImages.find(p => p.id === 'testimonial2')!.imageUrl,
     imageHint: PlaceHolderImages.find(p => p.id === 'testimonial2')!.imageHint,
     quote:
-      'The custom product developed by Apex has been a game-changer for our business. It’s robust, scalable, and was delivered ahead of schedule.',
+      'The custom product developed by Rust Innovations has been a game-changer for our business. It’s robust, scalable, and was delivered ahead of schedule.',
   },
 ];
 
@@ -71,11 +71,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
           <h1 className="font-headline text-4xl font-bold md:text-7xl">
-            Engineering Tomorrow's Success
+            Rust Innovations
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-gray-300 md:text-xl">
-            We provide innovative solutions and strategic insights to propel
-            your business into the future.
+          <p className="mt-4 max-w-2xl text-lg text-secondary-foreground md:text-xl">
+            .Optimise .Accurate .Succeed
+          </p>
+          <p className="mt-4 max-w-3xl text-base text-gray-300 md:text-lg">
+            Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more. Our mission is to deliver top-quality services in the shortest time, ensuring affordability and speed without borders.
           </p>
           <Button asChild size="lg" className="mt-8">
             <Link href="/services">
@@ -89,7 +91,7 @@ export default function Home() {
       <section className="bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
           <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">
-            Why Choose Apex?
+            Why Choose Us?
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-muted-foreground">
             We blend strategic vision with technological expertise to deliver

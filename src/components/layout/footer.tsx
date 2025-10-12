@@ -12,8 +12,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <Logo />
             <p className="text-sm text-muted-foreground">
-              Engineering Tomorrow's Success with innovative solutions and
-              strategic insights.
+              Optimise. Accurate. Succeed. Your one-stop solution for all digital needs.
             </p>
             <div className="flex gap-4">
               <Link href="#" aria-label="Twitter">
@@ -77,7 +76,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Apex Solutions. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Rust Innovations. All rights reserved.</p>
         </div>
       </div>
     </footer>

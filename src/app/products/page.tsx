@@ -5,8 +5,8 @@ import { Check } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Our Products | Apex Solutions',
-    description: 'Discover the innovative products offered by Apex Solutions, engineered for performance, reliability, and scale.',
+    title: 'Our Products | Rust Innovations',
+    description: 'Discover the innovative products offered by Rust Innovations, engineered for performance, reliability, and scale.',
 };
 
 export default function ProductsPage() {

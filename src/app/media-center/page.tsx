@@ -7,8 +7,8 @@ import { format } from 'date-fns';
 import { ArticleAnalyzer } from './article-analyzer';
 
 export const metadata: Metadata = {
-    title: 'Media Center | Apex Solutions',
-    description: 'Stay up-to-date with the latest news, announcements, and insights from Apex Solutions. Explore our AI-powered article relevance analyzer.',
+    title: 'Media Center | Rust Innovations',
+    description: 'Stay up-to-date with the latest news, announcements, and insights from Rust Innovations. Explore our AI-powered article relevance analyzer.',
 };
 
 export default function MediaCenterPage() {

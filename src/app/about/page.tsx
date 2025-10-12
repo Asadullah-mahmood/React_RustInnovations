@@ -7,8 +7,8 @@ import type { Metadata } from 'next';
 import { Handshake, Target, Gem } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'About Us | Apex Solutions',
-    description: 'Learn about the mission, values, and dedicated team behind Apex Solutions, driving innovation and excellence in the industry.',
+    title: 'About Us | Rust Innovations',
+    description: 'Learn about the mission, values, and dedicated team behind Rust Innovations, driving innovation and excellence in the industry.',
 };
 
 const values = [
@@ -24,7 +24,7 @@ export default function AboutPage() {
             {/* Hero Section */}
             <div className="container mx-auto px-4 py-16 text-center md:py-24">
                 <h1 className="font-headline text-4xl font-bold md:text-5xl">
-                    About Apex Solutions
+                    About Rust Innovations
                 </h1>
                 <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
                     We are a team of passionate innovators, strategists, and technologists dedicated to solving complex challenges and driving business success.

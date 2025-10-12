@@ -5,9 +5,9 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'Apex Solutions',
+  title: 'Rust Innovations',
   description:
-    'Apex Solutions delivers cutting-edge services and products, driving innovation and excellence for businesses worldwide.',
+    'Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more.',
 };
 
 export default function RootLayout({

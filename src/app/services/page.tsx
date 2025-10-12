@@ -5,8 +5,8 @@ import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-    title: 'Our Services | Apex Solutions',
-    description: 'Explore the comprehensive range of professional services offered by Apex Solutions, from digital strategy to custom development and beyond.',
+    title: 'Our Services | Rust Innovations',
+    description: 'Explore the comprehensive range of professional services offered by Rust Innovations, from digital strategy to custom development and beyond.',
 };
 
 export default function ServicesPage() {
