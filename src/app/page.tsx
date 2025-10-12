@@ -70,18 +70,19 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-          <h1 className="font-headline text-4xl font-bold md:text-7xl">
+          <h1 className="animated-gradient font-headline text-4xl font-bold md:text-7xl">
             Rust Innovations
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-secondary-foreground md:text-xl">
+          <p className="mt-4 max-w-2xl text-2xl font-semibold text-secondary-foreground md:text-4xl">
             .Optimise .Accurate .Succeed
           </p>
-          <p className="mt-4 max-w-3xl text-base text-gray-300 md:text-lg">
+          <p className="mt-4 max-w-lg text-sm text-gray-300 md:text-base line-clamp-3">
             Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more. Our mission is to deliver top-quality services in the shortest time, ensuring affordability and speed without borders.
           </p>
-          <Button asChild size="lg" className="mt-8">
+          <Button asChild size="lg" className="mt-8 group bg-primary hover:bg-black transition-colors duration-300">
             <Link href="/services">
-              Explore Our Services <ArrowRight className="ml-2 h-5 w-5" />
+              Explore Our Services 
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
             </Link>
           </Button>
         </div>

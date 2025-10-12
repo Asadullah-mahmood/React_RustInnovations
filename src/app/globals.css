@@ -57,3 +57,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  .animated-gradient {
+    @apply bg-gradient-to-r from-red-500 via-pink-500 to-red-500 bg-[length:200%_auto] text-transparent bg-clip-text animate-[gradient-animation_3s_ease_infinite];
+  }
+}
