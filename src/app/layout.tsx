@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { PageProgress } from '@/components/page-progress';
 
 export const metadata: Metadata = {
   title: 'Rust Innovations',
@@ -30,6 +31,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
+        <PageProgress />
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>
