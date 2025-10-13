@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu } from 'lucide-react';
+import { Menu, Package, X } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import { navLinks, products } from '@/lib/data';
 import {
@@ -20,63 +21,72 @@ import Image from 'next/image';
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isProductsModalOpen, setProductsModalOpen] = useState(false);
+
   const mainNavLinks = navLinks.filter(
     (link) => link.href !== '/contact'
   );
 
+  const handleProductsClick = () => {
+    setMenuOpen(false);
+    setProductsModalOpen(true);
+  };
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <Logo />
+    <>
+      <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container flex h-16 items-center justify-between">
+          <Logo />
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-6 md:flex">
-          {mainNavLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'text-sm font-medium transition-colors hover:text-primary',
-                pathname === link.href ? 'text-primary' : 'text-muted-foreground'
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          {/* Desktop Navigation */}
+          <nav className="hidden items-center gap-6 md:flex">
+            {mainNavLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'text-sm font-medium transition-colors hover:text-primary',
+                  pathname === link.href ? 'text-primary' : 'text-muted-foreground'
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             {/* Products Dropdown */}
             <div className="hidden md:flex">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost">
-                    Products
+                    <Package className="mr-2" /> Products
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[360px] p-4" align="end">
-                    <div className="grid grid-cols-3 gap-4">
-                      {products.map((product) => (
-                        <DropdownMenuItem key={product.id} asChild className="p-0">
-                          <Link
-                            href={{
-                              pathname: '/contact',
-                              query: { subject: `Inquiry about ${product.name}` },
-                            }}
-                            className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
-                          >
-                            <Image
-                              src={product.imageUrl}
-                              alt={product.name}
-                              width={48}
-                              height={48}
-                              className="rounded-md object-cover"
-                            />
-                            <p className="w-full truncate text-xs font-semibold">{product.name}</p>
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </div>
+                  <div className="grid grid-cols-3 gap-4">
+                    {products.slice(0, 9).map((product) => (
+                      <DropdownMenuItem key={product.id} asChild className="p-0">
+                        <Link
+                          href={{
+                            pathname: '/contact',
+                            query: { subject: `Inquiry about ${product.name}` },
+                          }}
+                          className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
+                        >
+                          <Image
+                            src={product.imageUrl}
+                            alt={product.name}
+                            width={48}
+                            height={48}
+                            className="rounded-md object-cover"
+                            data-ai-hint={product.imageHint}
+                          />
+                          <p className="w-full truncate text-xs font-semibold">{product.name}</p>
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
+                  </div>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -101,7 +111,7 @@ export function Header() {
                       <Logo />
                     </div>
                     <nav className="mt-8 flex flex-col gap-4">
-                      {navLinks.map((link) => (
+                      {mainNavLinks.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
@@ -114,38 +124,62 @@ export function Header() {
                           {link.label}
                         </Link>
                       ))}
-                      <div className="mt-4 border-t pt-4">
-                        <h3 className="mb-4 text-lg font-medium">Products</h3>
-                        <div className="grid grid-cols-3 gap-4">
-                           {products.map((product) => (
-                             <Link
-                                key={product.id}
-                                href={{
-                                  pathname: '/contact',
-                                  query: { subject: `Inquiry about ${product.name}` },
-                                }}
-                                onClick={() => setMenuOpen(false)}
-                                className="flex flex-col items-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
-                              >
-                                <Image
-                                  src={product.imageUrl}
-                                  alt={product.name}
-                                  width={48}
-                                  height={48}
-                                  className="rounded-md object-cover"
-                                />
-                                <p className="w-full truncate text-xs font-semibold">{product.name}</p>
-                              </Link>
-                           ))}
-                        </div>
-                      </div>
+                      <button
+                        onClick={handleProductsClick}
+                        className="text-left text-lg font-medium text-foreground transition-colors hover:text-primary"
+                      >
+                        Products
+                      </button>
+                      <Link
+                        href="/contact"
+                        onClick={() => setMenuOpen(false)}
+                        className={cn(
+                          'text-lg font-medium transition-colors hover:text-primary',
+                          pathname === '/contact' ? 'text-primary' : 'text-foreground'
+                        )}
+                      >
+                        Contact Us
+                      </Link>
                     </nav>
                   </div>
                 </SheetContent>
               </Sheet>
             </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+
+      {/* Mobile Products Modal */}
+      <Dialog open={isProductsModalOpen} onOpenChange={setProductsModalOpen}>
+        <DialogContent className="sm:max-w-[calc(100vw-2rem)] w-[calc(100vw-2rem)] rounded-lg">
+          <DialogHeader>
+            <DialogTitle>Products</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-3 gap-4 py-4">
+            {products.slice(0, 9).map((product) => (
+              <Link
+                key={product.id}
+                href={{
+                  pathname: '/contact',
+                  query: { subject: `Inquiry about ${product.name}` },
+                }}
+                onClick={() => setProductsModalOpen(false)}
+                className="flex flex-col items-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
+              >
+                <Image
+                  src={product.imageUrl}
+                  alt={product.name}
+                  width={64}
+                  height={64}
+                  className="rounded-md object-cover"
+                  data-ai-hint={product.imageHint}
+                />
+                <p className="w-full truncate text-xs font-semibold">{product.name}</p>
+              </Link>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
