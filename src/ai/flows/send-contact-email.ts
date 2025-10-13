@@ -29,10 +29,16 @@ const sendContactEmailFlow = ai.defineFlow(
     outputSchema: z.void(),
   },
   async (input) => {
+    if (!process.env.RESEND_API_KEY) {
+      console.log('RESEND_API_KEY not found, skipping email sending.');
+      // In a real app, you'd want to handle this more gracefully.
+      // For this prototype, we'll just log it.
+      return;
+    }
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      from: 'Rust Innovations <onboarding@resend.dev>', // This must be a verified domain on Resend
+      from: `${input.name} <onboarding@resend.dev>`, // This must be a verified domain on Resend
       to: 'hafizzubair7867@gmail.com',
       subject: `New message from ${input.name}: ${input.subject}`,
       reply_to: input.email,
