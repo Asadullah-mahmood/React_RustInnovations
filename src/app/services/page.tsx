@@ -21,7 +21,7 @@ export default function ServicesPage() {
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {services.map(service => (
-          <Card key={service.id} className="flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
+          <Card key={service.id} className="flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:scale-105">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <service.icon className="h-10 w-10 shrink-0 text-primary" />
@@ -30,7 +30,7 @@ export default function ServicesPage() {
             </CardHeader>
             <CardContent className="flex flex-1 flex-col">
               <CardDescription className="flex-1">{service.longDescription}</CardDescription>
-              <Button asChild className="mt-6 w-full">
+              <Button asChild className="mt-6 w-full transition-transform duration-300 hover:scale-110">
                 <Link href="#">Request a Quote</Link>
               </Button>
             </CardContent>

@@ -19,9 +19,14 @@ export function Logo() {
         <path d="M22 22 18 18" />
 
       </svg>
-      <span className="font-headline text-2xl font-bold text-foreground">
-        Rust_Innovations
-      </span>
+      <div className="flex flex-col">
+        <span className="font-headline text-2xl font-bold text-foreground">
+          Rust Innovations
+        </span>
+        <span className="text-xs text-primary self-end -mt-1">
+          Limited Liability Company
+        </span>
+      </div>
     </Link>
   );
 }

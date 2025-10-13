@@ -73,7 +73,7 @@ export function ArticleAnalyzer() {
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isLoading} className="w-full">
+            <Button type="submit" disabled={isLoading} className="w-full transition-transform duration-300 hover:scale-110">
               {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
               Analyze Article
             </Button>

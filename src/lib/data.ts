@@ -8,7 +8,6 @@ export const navLinks: NavLink[] = [
   { href: '/about', label: 'About Us' },
   { href: '/products', label: 'Products' },
   { href: '/media-center', label: 'Media Center' },
-  { href: '/blog', label: 'Blog' },
 ];
 
 export const services: Service[] = [

@@ -73,7 +73,7 @@ export function Header() {
           </Sheet>
         </div>
 
-        <Button asChild className="hidden md:flex">
+        <Button asChild className="hidden md:flex transition-transform duration-300 hover:scale-110">
             <Link href="#">Contact Us</Link>
         </Button>
       </div>

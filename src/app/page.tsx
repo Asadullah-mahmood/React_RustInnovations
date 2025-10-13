@@ -79,7 +79,7 @@ export default function Home() {
           <p className="mt-4 max-w-lg text-sm text-gray-300 md:text-base line-clamp-3">
             Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more. Our mission is to deliver top-quality services in the shortest time, ensuring affordability and speed without borders.
           </p>
-          <Button asChild size="lg" className="mt-8 group bg-primary hover:bg-black transition-colors duration-300">
+          <Button asChild size="lg" className="mt-8 group transition-transform duration-300 hover:scale-110">
             <Link href="/services">
               Explore Our Services 
               <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
@@ -158,7 +158,7 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-110">
               <Link href="/services">View All Services</Link>
             </Button>
           </div>
