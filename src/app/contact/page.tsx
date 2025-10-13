@@ -16,10 +16,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Loader2 } from 'lucide-react';
 import { Animated, fadeUp } from '@/components/ui/animated';
 import { useSearchParams } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { sendContactEmail } from '@/ai/flows/send-contact-email';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -40,6 +41,7 @@ export default function ContactPage() {
   const { toast } = useToast();
   const searchParams = useSearchParams();
   const subjectParam = searchParams.get('subject');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -58,13 +60,29 @@ export default function ContactPage() {
   }, [subjectParam, form]);
 
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: 'Message Sent!',
-      description: "Thanks for reaching out. We'll get back to you soon.",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    try {
+      await sendContactEmail(values);
+      toast({
+        title: 'Message Sent!',
+        description: "Thanks for reaching out. We'll get back to you soon.",
+      });
+      form.reset();
+       // Reset subject if it was pre-filled
+      if (subjectParam) {
+        form.setValue('subject', '');
+      }
+    } catch (error) {
+      console.error('Failed to send contact email:', error);
+      toast({
+        variant: 'destructive',
+        title: 'Uh oh! Something went wrong.',
+        description: 'Could not send your message. Please try again later.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -116,7 +134,7 @@ export default function ContactPage() {
                   <FormItem>
                     <FormLabel>Your Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="John Doe" {...field} />
+                      <Input placeholder="John Doe" {...field} disabled={isSubmitting} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -129,7 +147,7 @@ export default function ContactPage() {
                   <FormItem>
                     <FormLabel>Your Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="john.doe@example.com" {...field} />
+                      <Input placeholder="john.doe@example.com" {...field} disabled={isSubmitting} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -142,7 +160,7 @@ export default function ContactPage() {
                   <FormItem>
                     <FormLabel>Subject</FormLabel>
                     <FormControl>
-                      <Input placeholder="Regarding your services" {...field} />
+                      <Input placeholder="Regarding your services" {...field} disabled={isSubmitting} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -159,13 +177,15 @@ export default function ContactPage() {
                         placeholder="Tell us about your project or inquiry..."
                         className="min-h-[150px]"
                         {...field}
+                        disabled={isSubmitting}
                       />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full transition-transform duration-300 hover:scale-110">
+              <Button type="submit" className="w-full transition-transform duration-300 hover:scale-110" disabled={isSubmitting}>
+                {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 Send Message
               </Button>
             </form>
