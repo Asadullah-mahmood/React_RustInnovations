@@ -32,10 +32,12 @@ const sendContactEmailFlow = ai.defineFlow(
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      from: 'onboarding@resend.dev', // This must be a verified domain on Resend
+      from: 'Rust Innovations <onboarding@resend.dev>', // This must be a verified domain on Resend
       to: 'hafizzubair7867@gmail.com',
-      subject: input.subject,
-      html: `<p>New message from ${input.name} (${input.email}):</p><p>${input.message}</p>`
+      subject: `New message from ${input.name}: ${input.subject}`,
+      reply_to: input.email,
+      html: `<p>New message from <strong>${input.name}</strong> (${input.email}):</p>
+             <p>${input.message}</p>`
     });
     
     return;
