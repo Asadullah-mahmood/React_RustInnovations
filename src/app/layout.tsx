@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { PageProgress } from '@/components/page-progress';
+import { WhatsappFAB } from '@/components/whatsapp-fab';
 
 export const metadata: Metadata = {
   title: 'Rust Innovations',
@@ -37,6 +38,7 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
+        <WhatsappFAB phoneNumber="+923264692997" />
         <Toaster />
       </body>
     </html>
