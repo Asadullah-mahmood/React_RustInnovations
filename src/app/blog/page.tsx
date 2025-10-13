@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -5,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { blogPosts } from '@/lib/data';
 import type { Metadata } from 'next';
 import { format } from 'date-fns';
+import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
     title: 'Blog | Rust Innovations',
@@ -14,16 +16,16 @@ export const metadata: Metadata = {
 export default function BlogPage() {
     return (
         <div className="container mx-auto px-4 py-16 md:py-24">
-            <div className="text-center">
+            <Animated variants={fadeUp} className="text-center">
                 <h1 className="font-headline text-4xl font-bold md:text-5xl">From the Blog</h1>
                 <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                     Insights, articles, and news from the team at Rust Innovations.
                 </p>
-            </div>
+            </Animated>
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {blogPosts.map(post => (
-                    <Card key={post.id} className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                {blogPosts.map((post, i) => (
+                    <Animated as={Card} key={post.id} variants={scaleUp} delay={i * 0.1} className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
                          <Link href={`/blog/${post.id}`} className="block">
                             <div className="relative h-56 w-full">
                                 <Image
@@ -53,7 +55,7 @@ export default function BlogPage() {
                         <CardContent className="flex-1">
                            <p className="text-muted-foreground">{post.excerpt}</p>
                         </CardContent>
-                    </Card>
+                    </Animated>
                 ))}
             </div>
         </div>

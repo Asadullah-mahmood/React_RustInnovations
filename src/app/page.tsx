@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -11,6 +12,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { services } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
+import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
 
 const features = [
   {
@@ -70,38 +72,45 @@ export default function Home() {
         )}
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-          <h1 className="animated-gradient font-headline text-4xl font-bold md:text-7xl">
-            Rust Innovations
-          </h1>
-          <p className="mt-4 max-w-2xl text-2xl font-semibold text-secondary-foreground md:text-4xl">
-            .Optimise .Accurate .Succeed
-          </p>
-          <p className="mt-4 max-w-lg text-sm text-gray-300 md:text-base line-clamp-3">
-            Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more. Our mission is to deliver top-quality services in the shortest time, ensuring affordability and speed without borders.
-          </p>
-          <Button asChild size="lg" className="mt-8 group transition-transform duration-300 hover:scale-110">
-            <Link href="/services">
-              Explore Our Services 
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
-            </Link>
-          </Button>
+          <Animated variants={fadeUp}>
+            <h1 className="animated-gradient font-headline text-4xl font-bold md:text-7xl">
+              Rust Innovations
+            </h1>
+          </Animated>
+          <Animated variants={fadeUp} delay={0.1}>
+            <p className="mt-4 max-w-2xl text-2xl font-semibold text-secondary-foreground md:text-4xl">
+              .Optimise .Accurate .Succeed
+            </p>
+          </Animated>
+          <Animated variants={fadeUp} delay={0.2}>
+            <p className="mt-4 max-w-lg text-sm text-gray-300 md:text-base line-clamp-3">
+              Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more. Our mission is to deliver top-quality services in the shortest time, ensuring affordability and speed without borders.
+            </p>
+          </Animated>
+          <Animated variants={fadeUp} delay={0.3}>
+            <Button asChild size="lg" className="mt-8 group transition-transform duration-300 hover:scale-110">
+              <Link href="/services">
+                Explore Our Services
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
+              </Link>
+            </Button>
+          </Animated>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
       <section className="bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">
+          <Animated as="h2" variants={fadeUp} className="text-center font-headline text-3xl font-bold md:text-4xl">
             Why Choose Us?
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-muted-foreground">
+          </Animated>
+          <Animated as="p" variants={fadeUp} delay={0.1} className="mx-auto mt-4 max-w-3xl text-center text-lg text-muted-foreground">
             We blend strategic vision with technological expertise to deliver
             solutions that are not just effective, but transformative.
-          </p>
+          </Animated>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {features.map(feature => (
-              <Card
-                key={feature.title}
+            {features.map((feature, i) => (
+              <Animated as={Card} key={feature.title} variants={scaleUp} delay={i * 0.1}
                 className="transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20"
               >
                 <CardHeader className="items-center text-center">
@@ -113,7 +122,7 @@ export default function Home() {
                 <CardContent className="text-center">
                   <p className="text-muted-foreground">{feature.description}</p>
                 </CardContent>
-              </Card>
+              </Animated>
             ))}
           </div>
         </div>
@@ -122,13 +131,15 @@ export default function Home() {
       {/* Services Preview */}
       <section className="bg-card py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">
+          <Animated as="h2" variants={fadeUp} className="text-center font-headline text-3xl font-bold md:text-4xl">
             Our Core Services
-          </h2>
+          </Animated>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-            {services.slice(0, 4).map(service => (
-              <div
+            {services.slice(0, 4).map((service, i) => (
+              <Animated
                 key={service.id}
+                variants={scaleUp}
+                delay={i * 0.1}
                 className="group relative overflow-hidden rounded-lg"
               >
                 <Image
@@ -154,26 +165,26 @@ export default function Home() {
                     </Link>
                   </Button>
                 </div>
-              </div>
+              </Animated>
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <Animated variants={fadeUp} className="mt-12 text-center">
             <Button asChild size="lg" variant="outline" className="transition-transform duration-300 hover:scale-110">
               <Link href="/services">View All Services</Link>
             </Button>
-          </div>
+          </Animated>
         </div>
       </section>
 
       {/* Testimonials */}
       <section className="bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">
+          <Animated as="h2" variants={fadeUp} className="text-center font-headline text-3xl font-bold md:text-4xl">
             What Our Clients Say
-          </h2>
+          </Animated>
           <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-            {testimonials.map(testimonial => (
-              <Card key={testimonial.name} className="flex flex-col">
+            {testimonials.map((testimonial, i) => (
+              <Animated as={Card} key={testimonial.name} variants={scaleUp} delay={i * 0.1} className="flex flex-col">
                 <CardContent className="flex-1 p-6">
                   <p className="italic text-muted-foreground">
                     "{testimonial.quote}"
@@ -195,7 +206,7 @@ export default function Home() {
                     </p>
                   </div>
                 </CardHeader>
-              </Card>
+              </Animated>
             ))}
           </div>
         </div>

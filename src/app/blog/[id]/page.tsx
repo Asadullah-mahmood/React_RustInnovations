@@ -1,3 +1,4 @@
+
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { blogPosts } from '@/lib/data';
@@ -6,6 +7,7 @@ import { format } from 'date-fns';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { teamMembers } from '@/lib/data';
 import type { Metadata, ResolvingMetadata } from 'next';
+import { Animated, fadeUp } from '@/components/ui/animated';
 
 type Props = {
   params: { id: string }
@@ -41,7 +43,7 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
 
     return (
         <article className="container mx-auto max-w-4xl px-4 py-16 md:py-24">
-            <header className="mb-8 text-center">
+            <Animated as="header" variants={fadeUp} className="mb-8 text-center">
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
                     {post.tags.map(tag => (
                         <Badge key={tag} variant="secondary">{tag}</Badge>
@@ -64,9 +66,9 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
                         </p>
                     </div>
                 </div>
-            </header>
+            </Animated>
             
-            <div className="relative mb-8 h-72 w-full md:h-96">
+            <Animated variants={fadeUp} delay={0.2} className="relative mb-8 h-72 w-full md:h-96">
                 <Image
                     src={post.imageUrl}
                     alt={post.title}
@@ -75,9 +77,11 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
                     data-ai-hint={post.imageHint}
                     priority
                 />
-            </div>
+            </Animated>
 
-            <div 
+            <Animated 
+                variants={fadeUp}
+                delay={0.4}
                 className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-foreground"
                 dangerouslySetInnerHTML={{ __html: post.content }} 
             />

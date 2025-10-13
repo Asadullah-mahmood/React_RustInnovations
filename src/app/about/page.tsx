@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -5,6 +6,7 @@ import { teamMembers } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 import { Handshake, Target, Gem } from 'lucide-react';
+import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
     title: 'About Us | Rust Innovations',
@@ -22,34 +24,34 @@ export default function AboutPage() {
     return (
         <div className="bg-background">
             {/* Hero Section */}
-            <div className="container mx-auto px-4 py-16 text-center md:py-24">
+            <Animated variants={fadeUp} className="container mx-auto px-4 py-16 text-center md:py-24">
                 <h1 className="font-headline text-4xl font-bold md:text-5xl">
                     About Rust Innovations
                 </h1>
                 <p className="mx-auto mt-4 max-w-3xl text-lg text-muted-foreground">
                     We are a team of passionate innovators, strategists, and technologists dedicated to solving complex challenges and driving business success.
                 </p>
-            </div>
+            </Animated>
 
             {/* Mission Section */}
             <section className="py-16 md:py-24">
                 <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 md:grid-cols-2">
-                    <div>
+                    <Animated variants={fadeUp}>
                         <h2 className="font-headline text-3xl font-bold md:text-4xl">Our Mission</h2>
                         <p className="mt-4 text-muted-foreground">
                             To empower organizations with transformative technology and strategic guidance, enabling them to thrive in a rapidly evolving digital world. We are committed to building long-term partnerships based on trust, innovation, and a shared vision for success.
                         </p>
                         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                            {values.map(value => (
-                                <div key={value.title}>
+                            {values.map((value, i) => (
+                                <Animated key={value.title} variants={fadeUp} delay={0.2 + i * 0.1}>
                                     {value.icon}
                                     <h3 className="mt-2 font-headline text-lg font-semibold">{value.title}</h3>
                                     <p className="mt-1 text-sm text-muted-foreground">{value.description}</p>
-                                </div>
+                                </Animated>
                             ))}
                         </div>
-                    </div>
-                    <div className="overflow-hidden rounded-lg">
+                    </Animated>
+                    <Animated variants={scaleUp} className="overflow-hidden rounded-lg">
                         {missionImage && (
                             <Image
                                 src={missionImage.imageUrl}
@@ -60,22 +62,22 @@ export default function AboutPage() {
                                 data-ai-hint={missionImage.imageHint}
                             />
                         )}
-                    </div>
+                    </Animated>
                 </div>
             </section>
 
             {/* Team Section */}
             <section className="bg-card py-16 md:py-24">
                 <div className="container mx-auto px-4">
-                    <div className="text-center">
+                    <Animated variants={fadeUp} className="text-center">
                         <h2 className="font-headline text-3xl font-bold md:text-4xl">Meet Our Leadership</h2>
                         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                             The driving force behind our innovation and success.
                         </p>
-                    </div>
+                    </Animated>
                     <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-                        {teamMembers.map((member) => (
-                            <Card key={member.id} className="overflow-hidden text-center transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                        {teamMembers.map((member, i) => (
+                            <Animated as={Card} key={member.id} variants={scaleUp} delay={i * 0.1} className="overflow-hidden text-center transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                                 <CardContent className="p-6">
                                     <Avatar className="mx-auto h-32 w-32 border-4 border-primary/20">
                                         <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.imageHint} />
@@ -84,7 +86,7 @@ export default function AboutPage() {
                                     <h3 className="mt-4 font-headline text-xl font-semibold">{member.name}</h3>
                                     <p className="text-sm text-primary">{member.title}</p>
                                 </CardContent>
-                            </Card>
+                            </Animated>
                         ))}
                     </div>
                 </div>

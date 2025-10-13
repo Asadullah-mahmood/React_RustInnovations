@@ -1,8 +1,10 @@
+
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { services } from '@/lib/data';
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
+import { Animated, scaleUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
     title: 'Our Services | Rust Innovations',
@@ -20,8 +22,8 @@ export default function ServicesPage() {
       </div>
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {services.map(service => (
-          <Card key={service.id} className="flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:scale-105">
+        {services.map((service, i) => (
+          <Animated as={Card} key={service.id} variants={scaleUp} delay={i * 0.1} className="flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:scale-105">
             <CardHeader>
               <div className="flex items-center gap-4">
                 <service.icon className="h-10 w-10 shrink-0 text-primary" />
@@ -34,7 +36,7 @@ export default function ServicesPage() {
                 <Link href="#">Request a Quote</Link>
               </Button>
             </CardContent>
-          </Card>
+          </Animated>
         ))}
       </div>
     </div>

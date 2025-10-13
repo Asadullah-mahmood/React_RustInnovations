@@ -1,8 +1,10 @@
+
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { products } from '@/lib/data';
 import { Check } from 'lucide-react';
 import type { Metadata } from 'next';
+import { Animated, scaleUp, fadeUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
     title: 'Our Products | Rust Innovations',
@@ -12,16 +14,16 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-24">
-      <div className="text-center">
+      <Animated variants={fadeUp} className="text-center">
         <h1 className="font-headline text-4xl font-bold md:text-5xl">Our Products</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Engineered for excellence, our products are designed to solve your most complex challenges and drive your business forward.
         </p>
-      </div>
+      </Animated>
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
-        {products.map(product => (
-          <Card key={product.id} className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 md:grid md:grid-cols-2">
+        {products.map((product, i) => (
+          <Animated as={Card} key={product.id} variants={scaleUp} delay={i * 0.1} className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 md:grid md:grid-cols-2">
             <div className="relative h-64 md:h-full">
               <Image
                 src={product.imageUrl}
@@ -48,7 +50,7 @@ export default function ProductsPage() {
                 </ul>
               </CardContent>
             </div>
-          </Card>
+          </Animated>
         ))}
       </div>
     </div>
