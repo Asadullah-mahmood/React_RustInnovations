@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { services } from '@/lib/data';
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
-import { Animated, scaleUp } from '@/components/ui/animated';
+import { Animated, scaleUp, fadeUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
     title: 'Our Services | Rust Innovations',
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-24">
-      <div className="text-center">
+      <Animated as="div" variants={fadeUp} className="text-center">
         <h1 className="font-headline text-4xl font-bold md:text-5xl">Our Services</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           We provide a wide array of services designed to empower your business and drive growth in the digital age.
         </p>
-      </div>
+      </Animated>
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, i) => (
