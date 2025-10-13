@@ -1,6 +1,7 @@
+
 import type { NavLink, Service, Product, TeamMember, FooterLinks, NewsItem, BlogPost } from './types';
 import { PlaceHolderImages } from './placeholder-images';
-import { Bot, Code, Brush, BarChart3, Database, Cloud, Bitcoin, PenSquare, Type, Video, ShoppingCart, Search, Building } from 'lucide-react';
+import { Bot, Code, Brush, BarChart3, Database, Cloud, Bitcoin, PenSquare, Type, Video, ShoppingCart, Search, Building, Facebook, Instagram, Twitter, Linkedin, Github } from 'lucide-react';
 
 export const navLinks: NavLink[] = [
   { href: '/', label: 'Home' },
@@ -8,6 +9,7 @@ export const navLinks: NavLink[] = [
   { href: '/about', label: 'About Us' },
   { href: '/products', label: 'Products' },
   { href: '/media-center', label: 'Media Center' },
+  { href: '/contact', label: 'Contact Us' },
 ];
 
 export const services: Service[] = [
@@ -232,14 +234,14 @@ export const footerLinks: FooterLinks = {
     { href: '/services', label: 'Services' },
     { href: '/products', label: 'Products' },
     { href: '/media-center', label: 'Media Center' },
+    { href: '/contact', label: 'Contact Us' },
   ],
   ourPolicy: [
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/aml-policy', label: 'AML Policy' },
     { href: '/terms-and-conditions', label: 'Terms & Conditions' },
-    { href: '#', label: 'Cookie Policy' },
   ],
-  countries: ['United States', 'United Kingdom', 'Germany', 'Japan', 'Australia'],
+  countries: ['Pakistan', 'Indonesia', 'UAE'],
 };
 
 export const newsItems: NewsItem[] = [

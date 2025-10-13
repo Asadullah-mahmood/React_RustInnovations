@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -74,7 +75,7 @@ export function Header() {
         </div>
 
         <Button asChild className="hidden md:flex transition-transform duration-300 hover:scale-110">
-            <Link href="#">Contact Us</Link>
+            <Link href="/contact">Contact Us</Link>
         </Button>
       </div>
     </header>
