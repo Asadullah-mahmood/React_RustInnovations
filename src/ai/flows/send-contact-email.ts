@@ -36,7 +36,7 @@ const sendContactEmailFlow = ai.defineFlow(
     console.log('Message:');
     console.log(input.message);
     console.log('-----------------------------------');
-    console.log('Email would be sent to: info@rustinnovations.com');
+    console.log('Email would be sent to: hafizzubair7867@gmail.com');
 
     // This is where you would add your email sending logic. For example:
     //
@@ -45,7 +45,7 @@ const sendContactEmailFlow = ai.defineFlow(
     //
     // await resend.emails.send({
     //   from: 'onboarding@resend.dev', // Must be a verified domain
-    //   to: 'info@rustinnovations.com',
+    //   to: 'hafizzubair7867@gmail.com',
     //   subject: input.subject,
     //   html: `<p>New message from ${input.name} (${input.email}):</p><p>${input.message}</p>`
     // });
