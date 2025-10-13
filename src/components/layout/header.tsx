@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Grip } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -21,7 +21,7 @@ export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
   const mainNavLinks = navLinks.filter(
-    (link) => link.href !== '/contact' && link.href !== '/products'
+    (link) => link.href !== '/contact'
   );
 
   return (
@@ -101,7 +101,7 @@ export function Header() {
                       <Logo />
                     </div>
                     <nav className="mt-8 flex flex-col gap-4">
-                      {navLinks.filter(l => l.href !== '/products').map((link) => (
+                      {navLinks.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
