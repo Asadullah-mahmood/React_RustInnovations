@@ -77,15 +77,17 @@ export default function AboutPage() {
                     </Animated>
                     <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
                         {teamMembers.map((member, i) => (
-                            <Animated as={Card} key={member.id} variants={scaleUp} delay={i * 0.1} className="overflow-hidden text-center transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
-                                <CardContent className="p-6">
-                                    <Avatar className="mx-auto h-32 w-32 border-4 border-primary/20">
-                                        <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.imageHint} />
-                                        <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                                    </Avatar>
-                                    <h3 className="mt-4 font-headline text-xl font-semibold">{member.name}</h3>
-                                    <p className="text-sm text-primary">{member.title}</p>
-                                </CardContent>
+                            <Animated key={member.id} variants={scaleUp} delay={i * 0.1}>
+                                <Card className="overflow-hidden text-center transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                                    <CardContent className="p-6">
+                                        <Avatar className="mx-auto h-32 w-32 border-4 border-primary/20">
+                                            <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.imageHint} />
+                                            <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                                        </Avatar>
+                                        <h3 className="mt-4 font-headline text-xl font-semibold">{member.name}</h3>
+                                        <p className="text-sm text-primary">{member.title}</p>
+                                    </CardContent>
+                                </Card>
                             </Animated>
                         ))}
                     </div>

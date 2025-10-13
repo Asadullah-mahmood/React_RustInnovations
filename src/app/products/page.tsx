@@ -23,33 +23,35 @@ export default function ProductsPage() {
 
       <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2">
         {products.map((product, i) => (
-          <Animated as={Card} key={product.id} variants={scaleUp} delay={i * 0.1} className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 md:grid md:grid-cols-2">
-            <div className="relative h-64 md:h-full">
-              <Image
-                src={product.imageUrl}
-                alt={product.name}
-                fill
-                className="object-cover"
-                data-ai-hint={product.imageHint}
-              />
-            </div>
-            <div className="flex flex-col p-6">
-              <CardHeader className="p-0">
-                <CardTitle className="font-headline text-2xl">{product.name}</CardTitle>
-                <CardDescription className="pt-2">{product.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1 p-0 pt-6">
-                <h4 className="font-semibold">Key Features:</h4>
-                <ul className="mt-2 space-y-2">
-                  {product.specifications.map((spec, index) => (
-                    <li key={index} className="flex items-start gap-2 text-sm">
-                      <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
-                      <span className="text-muted-foreground">{spec}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </div>
+          <Animated key={product.id} variants={scaleUp} delay={i * 0.1}>
+            <Card className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 md:grid md:grid-cols-2">
+              <div className="relative h-64 md:h-full">
+                <Image
+                  src={product.imageUrl}
+                  alt={product.name}
+                  fill
+                  className="object-cover"
+                  data-ai-hint={product.imageHint}
+                />
+              </div>
+              <div className="flex flex-col p-6">
+                <CardHeader className="p-0">
+                  <CardTitle className="font-headline text-2xl">{product.name}</CardTitle>
+                  <CardDescription className="pt-2">{product.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1 p-0 pt-6">
+                  <h4 className="font-semibold">Key Features:</h4>
+                  <ul className="mt-2 space-y-2">
+                    {product.specifications.map((spec, index) => (
+                      <li key={index} className="flex items-start gap-2 text-sm">
+                        <Check className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                        <span className="text-muted-foreground">{spec}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </div>
+            </Card>
           </Animated>
         ))}
       </div>

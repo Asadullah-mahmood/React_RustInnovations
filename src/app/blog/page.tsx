@@ -25,36 +25,38 @@ export default function BlogPage() {
 
             <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {blogPosts.map((post, i) => (
-                    <Animated as={Card} key={post.id} variants={scaleUp} delay={i * 0.1} className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-                         <Link href={`/blog/${post.id}`} className="block">
-                            <div className="relative h-56 w-full">
-                                <Image
-                                    src={post.imageUrl}
-                                    alt={post.title}
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    data-ai-hint={post.imageHint}
-                                />
-                            </div>
-                        </Link>
-                        <CardHeader>
-                            <div className="flex flex-wrap gap-2">
-                                {post.tags.map(tag => (
-                                    <Badge key={tag} variant="secondary">{tag}</Badge>
-                                ))}
-                            </div>
-                            <CardTitle className="pt-2 font-headline text-xl">
-                                <Link href={`/blog/${post.id}`} className="hover:text-primary transition-colors">
-                                    {post.title}
-                                </Link>
-                            </CardTitle>
-                             <p className="text-sm text-muted-foreground">
-                                By {post.author} on {format(new Date(post.date), 'MMMM d, yyyy')}
-                            </p>
-                        </CardHeader>
-                        <CardContent className="flex-1">
-                           <p className="text-muted-foreground">{post.excerpt}</p>
-                        </CardContent>
+                    <Animated key={post.id} variants={scaleUp} delay={i * 0.1}>
+                        <Card className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                             <Link href={`/blog/${post.id}`} className="block">
+                                <div className="relative h-56 w-full">
+                                    <Image
+                                        src={post.imageUrl}
+                                        alt={post.title}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        data-ai-hint={post.imageHint}
+                                    />
+                                </div>
+                            </Link>
+                            <CardHeader>
+                                <div className="flex flex-wrap gap-2">
+                                    {post.tags.map(tag => (
+                                        <Badge key={tag} variant="secondary">{tag}</Badge>
+                                    ))}
+                                </div>
+                                <CardTitle className="pt-2 font-headline text-xl">
+                                    <Link href={`/blog/${post.id}`} className="hover:text-primary transition-colors">
+                                        {post.title}
+                                    </Link>
+                                </CardTitle>
+                                 <p className="text-sm text-muted-foreground">
+                                    By {post.author} on {format(new Date(post.date), 'MMMM d, yyyy')}
+                                </p>
+                            </CardHeader>
+                            <CardContent className="flex-1">
+                               <p className="text-muted-foreground">{post.excerpt}</p>
+                            </CardContent>
+                        </Card>
                     </Animated>
                 ))}
             </div>

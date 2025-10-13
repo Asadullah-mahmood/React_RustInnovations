@@ -43,29 +43,31 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
 
     return (
         <article className="container mx-auto max-w-4xl px-4 py-16 md:py-24">
-            <Animated as="header" variants={fadeUp} className="mb-8 text-center">
-                <div className="flex flex-wrap justify-center gap-2 mb-4">
-                    {post.tags.map(tag => (
-                        <Badge key={tag} variant="secondary">{tag}</Badge>
-                    ))}
-                </div>
-                <h1 className="font-headline text-3xl font-bold md:text-5xl">
-                    {post.title}
-                </h1>
-                <div className="mt-6 flex items-center justify-center gap-4">
-                    {author && (
-                         <Avatar>
-                            <AvatarImage src={author.imageUrl} alt={author.name} data-ai-hint={author.imageHint} />
-                            <AvatarFallback>{author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                        </Avatar>
-                    )}
-                    <div>
-                        <p className="font-semibold">{post.author}</p>
-                        <p className="text-sm text-muted-foreground">
-                            Published on {format(new Date(post.date), 'MMMM d, yyyy')}
-                        </p>
+            <Animated variants={fadeUp}>
+                <header className="mb-8 text-center">
+                    <div className="flex flex-wrap justify-center gap-2 mb-4">
+                        {post.tags.map(tag => (
+                            <Badge key={tag} variant="secondary">{tag}</Badge>
+                        ))}
                     </div>
-                </div>
+                    <h1 className="font-headline text-3xl font-bold md:text-5xl">
+                        {post.title}
+                    </h1>
+                    <div className="mt-6 flex items-center justify-center gap-4">
+                        {author && (
+                             <Avatar>
+                                <AvatarImage src={author.imageUrl} alt={author.name} data-ai-hint={author.imageHint} />
+                                <AvatarFallback>{author.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                            </Avatar>
+                        )}
+                        <div>
+                            <p className="font-semibold">{post.author}</p>
+                            <p className="text-sm text-muted-foreground">
+                                Published on {format(new Date(post.date), 'MMMM d, yyyy')}
+                            </p>
+                        </div>
+                    </div>
+                </header>
             </Animated>
             
             <Animated variants={fadeUp} delay={0.2} className="relative mb-8 h-72 w-full md:h-96">
@@ -82,9 +84,12 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
             <Animated 
                 variants={fadeUp}
                 delay={0.4}
+            >
+              <div 
                 className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-foreground"
                 dangerouslySetInnerHTML={{ __html: post.content }} 
-            />
+              />
+            </Animated>
 
         </article>
     );

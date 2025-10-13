@@ -10,7 +10,6 @@ interface AnimatedProps extends React.HTMLAttributes<HTMLDivElement> {
   transition?: Transition;
   triggerOnce?: boolean;
   delay?: number;
-  as?: React.ElementType;
 }
 
 export const Animated = React.forwardRef<HTMLDivElement, AnimatedProps>(
@@ -21,15 +20,13 @@ export const Animated = React.forwardRef<HTMLDivElement, AnimatedProps>(
       transition,
       triggerOnce = true,
       delay = 0,
-      as: Comp = 'div',
       ...props
     },
     ref
   ) => {
     return (
-      <Comp
+      <motion.div
         ref={ref}
-        as={motion.div}
         className={cn(className)}
         initial="hidden"
         whileInView="visible"

@@ -101,27 +101,33 @@ export default function Home() {
       {/* Why Choose Us Section */}
       <section className="bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <Animated as="h2" variants={fadeUp} className="text-center font-headline text-3xl font-bold md:text-4xl">
-            Why Choose Us?
+          <Animated variants={fadeUp}>
+            <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">
+              Why Choose Us?
+            </h2>
           </Animated>
-          <Animated as="p" variants={fadeUp} delay={0.1} className="mx-auto mt-4 max-w-3xl text-center text-lg text-muted-foreground">
-            We blend strategic vision with technological expertise to deliver
-            solutions that are not just effective, but transformative.
+          <Animated variants={fadeUp} delay={0.1}>
+            <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-muted-foreground">
+              We blend strategic vision with technological expertise to deliver
+              solutions that are not just effective, but transformative.
+            </p>
           </Animated>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {features.map((feature, i) => (
-              <Animated as={Card} key={feature.title} variants={scaleUp} delay={i * 0.1}
-                className="transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20"
-              >
-                <CardHeader className="items-center text-center">
-                  {feature.icon}
-                  <CardTitle className="mt-4 font-headline text-xl">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
+              <Animated key={feature.title} variants={scaleUp} delay={i * 0.1}>
+                <Card
+                  className="transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20"
+                >
+                  <CardHeader className="items-center text-center">
+                    {feature.icon}
+                    <CardTitle className="mt-4 font-headline text-xl">
+                      {feature.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-muted-foreground">{feature.description}</p>
+                  </CardContent>
+                </Card>
               </Animated>
             ))}
           </div>
@@ -131,8 +137,10 @@ export default function Home() {
       {/* Services Preview */}
       <section className="bg-card py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <Animated as="h2" variants={fadeUp} className="text-center font-headline text-3xl font-bold md:text-4xl">
-            Our Core Services
+          <Animated variants={fadeUp}>
+            <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">
+              Our Core Services
+            </h2>
           </Animated>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {services.slice(0, 4).map((service, i) => (
@@ -179,33 +187,37 @@ export default function Home() {
       {/* Testimonials */}
       <section className="bg-background py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <Animated as="h2" variants={fadeUp} className="text-center font-headline text-3xl font-bold md:text-4xl">
-            What Our Clients Say
+          <Animated variants={fadeUp}>
+            <h2 className="text-center font-headline text-3xl font-bold md:text-4xl">
+              What Our Clients Say
+            </h2>
           </Animated>
           <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
             {testimonials.map((testimonial, i) => (
-              <Animated as={Card} key={testimonial.name} variants={scaleUp} delay={i * 0.1} className="flex flex-col">
-                <CardContent className="flex-1 p-6">
-                  <p className="italic text-muted-foreground">
-                    "{testimonial.quote}"
-                  </p>
-                </CardContent>
-                <CardHeader className="flex-row items-center gap-4 border-t pt-6">
-                  <Avatar>
-                    <AvatarImage
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      data-ai-hint={testimonial.imageHint}
-                    />
-                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {testimonial.title}
+              <Animated key={testimonial.name} variants={scaleUp} delay={i * 0.1}>
+                <Card className="flex flex-col">
+                  <CardContent className="flex-1 p-6">
+                    <p className="italic text-muted-foreground">
+                      "{testimonial.quote}"
                     </p>
-                  </div>
-                </CardHeader>
+                  </CardContent>
+                  <CardHeader className="flex-row items-center gap-4 border-t pt-6">
+                    <Avatar>
+                      <AvatarImage
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        data-ai-hint={testimonial.imageHint}
+                      />
+                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.title}
+                      </p>
+                    </div>
+                  </CardHeader>
+                </Card>
               </Animated>
             ))}
           </div>
