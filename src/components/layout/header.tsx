@@ -50,9 +50,8 @@ export function Header() {
             <div className="hidden md:flex">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Grip className="h-5 w-5" />
-                    <span className="sr-only">Products</span>
+                  <Button variant="ghost">
+                    Products
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-[360px] p-4" align="end">
@@ -100,10 +99,6 @@ export function Header() {
                   <div className="p-4">
                     <div className="flex items-center justify-between">
                       <Logo />
-                      <Button variant="ghost" size="icon" onClick={() => setMenuOpen(false)}>
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
-                      </Button>
                     </div>
                     <nav className="mt-8 flex flex-col gap-4">
                       {navLinks.filter(l => l.href !== '/products').map((link) => (
