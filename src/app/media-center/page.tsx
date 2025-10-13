@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { newsItems } from '@/lib/data';
@@ -28,7 +29,7 @@ export default function MediaCenterPage() {
                         priority
                     />
                 )}
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-black/80 to-black/60" />
                 <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
                     <h1 className="font-headline text-4xl font-bold md:text-5xl">
                         Media Center

@@ -70,7 +70,7 @@ export default function Home() {
             priority
           />
         )}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-black/80 to-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
           <Animated variants={fadeUp}>
             <h1 className="animated-gradient font-headline text-4xl font-bold md:text-7xl">
