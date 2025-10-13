@@ -148,30 +148,31 @@ export default function Home() {
                 key={service.id}
                 variants={scaleUp}
                 delay={i * 0.1}
-                className="group relative overflow-hidden rounded-lg"
               >
-                <Image
-                  src={service.imageUrl}
-                  alt={service.title}
-                  width={400}
-                  height={300}
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  data-ai-hint={service.imageHint}
-                />
-                <div className="absolute inset-0 bg-black/60 transition-colors group-hover:bg-black/70" />
-                <div className="absolute bottom-0 left-0 p-6">
-                  <h3 className="font-headline text-2xl font-bold text-white">
-                    {service.title}
-                  </h3>
-                  <Button
-                    asChild
-                    variant="link"
-                    className="p-0 text-white"
-                  >
-                    <Link href="/services">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                <div className="group relative overflow-hidden rounded-lg">
+                  <Image
+                    src={service.imageUrl}
+                    alt={service.title}
+                    width={400}
+                    height={300}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    data-ai-hint={service.imageHint}
+                  />
+                  <div className="absolute inset-0 bg-black/60 transition-colors group-hover:bg-black/70" />
+                  <div className="absolute bottom-0 left-0 p-6">
+                    <h3 className="font-headline text-2xl font-bold text-white">
+                      {service.title}
+                    </h3>
+                    <Button
+                      asChild
+                      variant="link"
+                      className="p-0 text-white"
+                    >
+                      <Link href="/services">
+                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </Animated>
             ))}
