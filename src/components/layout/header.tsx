@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -13,12 +12,10 @@ import { navLinks, products } from '@/lib/data';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import Image from 'next/image';
-import { ScrollArea } from '@/components/ui/scroll-area';
 
 export function Header() {
   const pathname = usePathname();
@@ -58,36 +55,29 @@ export function Header() {
                     <span className="sr-only">Products</span>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-80" align="end">
-                  <ScrollArea className="h-96">
-                    <DropdownMenuGroup>
+                <DropdownMenuContent className="w-[360px] p-4" align="end">
+                    <div className="grid grid-cols-3 gap-4">
                       {products.map((product) => (
-                        <DropdownMenuItem key={product.id} asChild>
+                        <DropdownMenuItem key={product.id} asChild className="p-0">
                           <Link
                             href={{
                               pathname: '/contact',
                               query: { subject: `Inquiry about ${product.name}` },
                             }}
-                            className="flex items-center gap-4 p-2"
+                            className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
                           >
                             <Image
                               src={product.imageUrl}
                               alt={product.name}
-                              width={40}
-                              height={40}
+                              width={48}
+                              height={48}
                               className="rounded-md object-cover"
                             />
-                            <div>
-                              <p className="font-semibold">{product.name}</p>
-                              <p className="text-xs text-muted-foreground">
-                                {product.description}
-                              </p>
-                            </div>
+                            <p className="w-full truncate text-xs font-semibold">{product.name}</p>
                           </Link>
                         </DropdownMenuItem>
                       ))}
-                    </DropdownMenuGroup>
-                  </ScrollArea>
+                    </div>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -106,7 +96,7 @@ export function Header() {
                     <span className="sr-only">Open menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <SheetContent side="right" className="w-full sm:w-[320px]">
                   <div className="p-4">
                     <div className="flex items-center justify-between">
                       <Logo />
@@ -130,8 +120,8 @@ export function Header() {
                         </Link>
                       ))}
                       <div className="mt-4 border-t pt-4">
-                        <h3 className="mb-2 text-lg font-medium">Products</h3>
-                        <div className="flex flex-col gap-4">
+                        <h3 className="mb-4 text-lg font-medium">Products</h3>
+                        <div className="grid grid-cols-3 gap-4">
                            {products.map((product) => (
                              <Link
                                 key={product.id}
@@ -140,18 +130,16 @@ export function Header() {
                                   query: { subject: `Inquiry about ${product.name}` },
                                 }}
                                 onClick={() => setMenuOpen(false)}
-                                className="flex items-center gap-4 p-2 rounded-md hover:bg-accent"
+                                className="flex flex-col items-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
                               >
                                 <Image
                                   src={product.imageUrl}
                                   alt={product.name}
-                                  width={40}
-                                  height={40}
+                                  width={48}
+                                  height={48}
                                   className="rounded-md object-cover"
                                 />
-                                <div>
-                                  <p className="font-semibold">{product.name}</p>
-                                </div>
+                                <p className="w-full truncate text-xs font-semibold">{product.name}</p>
                               </Link>
                            ))}
                         </div>
