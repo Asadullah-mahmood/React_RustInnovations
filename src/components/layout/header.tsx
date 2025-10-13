@@ -54,12 +54,12 @@ export function Header() {
           className={cn(
             'container transition-all duration-300',
             isScrolled
-              ? 'rounded-lg border border-primary bg-black/80 backdrop-blur-sm'
+              ? 'mx-auto max-w-6xl rounded-full border border-primary bg-black/80 backdrop-blur-sm'
               : 'rounded-none border-b border-transparent'
           )}
         >
           <div className="flex h-16 items-center justify-between">
-            <Logo iconOnly={isScrolled} />
+            <Logo iconOnly={false} />
 
             {/* Desktop Navigation */}
             <nav className="hidden items-center gap-6 md:flex">
