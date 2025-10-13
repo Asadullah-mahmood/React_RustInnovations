@@ -34,7 +34,7 @@ export default function ServicesPage() {
               <CardContent className="flex flex-1 flex-col">
                 <CardDescription className="flex-1">{service.longDescription}</CardDescription>
                 <Button asChild className="mt-6 w-full transition-transform duration-300 hover:scale-110">
-                  <Link href="#">Request a Quote</Link>
+                  <Link href="/contact">Request a Quote</Link>
                 </Button>
               </CardContent>
             </Card>
