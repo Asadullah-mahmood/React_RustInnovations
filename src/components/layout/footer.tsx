@@ -8,9 +8,9 @@ export function Footer() {
   return (
     <footer className="border-t bg-card text-card-foreground">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Company Info */}
-          <div className="flex flex-col gap-4 md:col-span-2">
+          <div className="flex flex-col gap-4 lg:col-span-5">
             <Logo />
              <p className="text-lg font-semibold text-primary">
               Let’s Build Your Digital Future with Rust Innovations.
@@ -36,53 +36,54 @@ export function Footer() {
               </Link>
             </div>
           </div>
+          <div className="grid grid-cols-2 gap-8 lg:col-span-7 lg:grid-cols-3">
+              {/* Quick Links */}
+              <div>
+                <h3 className="font-headline text-lg font-semibold">Quick Links</h3>
+                <ul className="mt-4 space-y-2">
+                  {footerLinks.quickLinks.map(link => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-headline text-lg font-semibold">Quick Links</h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.quickLinks.map(link => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+              {/* Our Policy */}
+              <div>
+                <h3 className="font-headline text-lg font-semibold">Our Policy</h3>
+                <ul className="mt-4 space-y-2">
+                  {footerLinks.ourPolicy.map(link => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Our Policy */}
-          <div>
-            <h3 className="font-headline text-lg font-semibold">Our Policy</h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.ourPolicy.map(link => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Operational Countries */}
-          <div>
-            <h3 className="font-headline text-lg font-semibold">
-              Operational Countries
-            </h3>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.countries.map(country => (
-                <li key={country} className="text-sm text-muted-foreground">
-                  {country}
-                </li>
-              ))}
-            </ul>
+              {/* Operational Countries */}
+              <div>
+                <h3 className="font-headline text-lg font-semibold">
+                  Operational Countries
+                </h3>
+                <ul className="mt-4 space-y-2">
+                  {footerLinks.countries.map(country => (
+                    <li key={country} className="text-sm text-muted-foreground">
+                      {country}
+                    </li>
+                  ))}
+                </ul>
+              </div>
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">

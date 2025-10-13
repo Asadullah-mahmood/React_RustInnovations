@@ -14,6 +14,7 @@ import { navLinks } from '@/lib/data';
 export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const mainNavLinks = navLinks.filter(link => link.href !== '/contact');
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -22,7 +23,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-6 md:flex">
-          {navLinks.map(link => (
+          {mainNavLinks.map(link => (
             <Link
               key={link.href}
               href={link.href}

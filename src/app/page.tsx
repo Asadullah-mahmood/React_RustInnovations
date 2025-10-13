@@ -84,7 +84,7 @@ export default function Home() {
           </Animated>
           <Animated variants={fadeUp} delay={0.2}>
             <p className="mt-4 max-w-lg text-sm text-gray-300 md:text-base line-clamp-3">
-              Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more. Our mission is to deliver top-quality services in the shortest time, ensuring affordability and speed without borders.
+              Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more.
             </p>
           </Animated>
           <Animated variants={fadeUp} delay={0.3}>
