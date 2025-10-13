@@ -84,23 +84,29 @@ export default function ContactPage() {
                     Fill out the form and our team will get back to you within 24 hours.
                 </p>
             </div>
-            <div className="space-y-4 text-muted-foreground">
+            <div className="space-y-6 text-muted-foreground">
                 <div className="flex items-center gap-4">
-                    <Mail className="h-6 w-6 text-primary" />
-                    <span>contact@rustinnovations.com</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                      <Mail className="h-6 w-6 text-primary" />
+                    </div>
+                    <span>Info@rustinnovations.com</span>
                 </div>
                 <div className="flex items-center gap-4">
-                    <Phone className="h-6 w-6 text-primary" />
-                    <span>+1 (555) 123-4567</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                      <Phone className="h-6 w-6 text-primary" />
+                    </div>
+                    <span>(+92)326-4692997</span>
                 </div>
                 <div className="flex items-center gap-4">
-                    <MapPin className="h-6 w-6 text-primary" />
-                    <span>123 Innovation Drive, Tech City, 12345</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <span>Lahore, Pakistan</span>
                 </div>
             </div>
         </Animated>
 
-        <Animated as="div" variants={fadeUp} delay={0.4}>
+        <Animated as="div" variants={fadeUp} delay={0.4} className="rounded-xl border border-border/20 bg-card/50 p-8 shadow-lg backdrop-blur-sm">
             <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <FormField
