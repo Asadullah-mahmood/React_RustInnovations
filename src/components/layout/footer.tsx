@@ -15,8 +15,8 @@ export function Footer() {
              <p className="text-lg font-semibold text-primary">
               Let’s Build Your Digital Future with Rust Innovations.
             </p>
-            <p className="text-sm text-muted-foreground">
-              Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more.
+            <p className="text-sm text-muted-foreground max-w-md">
+              Rust Innovations is your one-stop digital solution for web and app development, software, courses, e-commerce, and more.
             </p>
             <div className="flex gap-4">
               <Link href="#" aria-label="Facebook">
