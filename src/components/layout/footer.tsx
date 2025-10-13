@@ -5,6 +5,7 @@ import { Logo } from '@/components/logo';
 import { footerLinks } from '@/lib/data';
 
 export function Footer() {
+  const quickLinks = footerLinks.quickLinks.filter(link => link.href !== '/products');
   return (
     <footer className="border-t bg-card text-card-foreground">
       <div className="container mx-auto px-4 py-12">
@@ -41,7 +42,7 @@ export function Footer() {
               <div>
                 <h3 className="font-headline text-lg font-semibold">Quick Links</h3>
                 <ul className="mt-4 space-y-2">
-                  {footerLinks.quickLinks.map(link => (
+                  {quickLinks.map(link => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
