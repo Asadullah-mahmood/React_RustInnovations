@@ -39,8 +39,20 @@ export type FooterLinks = {
 };
 
 export type NewsItem = {
-    id: string;
+    id:string;
     title: string;
     date: string;
     excerpt: string;
 }
+
+export type BlogPost = {
+    id: string;
+    title: string;
+    author: string;
+    date: string;
+    tags: string[];
+    imageUrl: string;
+    imageHint: string;
+    excerpt: string;
+    content: string;
+};
