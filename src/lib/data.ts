@@ -232,11 +232,11 @@ export const footerLinks: FooterLinks = {
     { href: '/services', label: 'Services' },
     { href: '/products', label: 'Products' },
     { href: '/media-center', label: 'Media Center' },
-    { href: '/blog', label: 'Blog' },
   ],
   ourPolicy: [
-    { href: '#', label: 'Privacy Policy' },
-    { href: '#', label: 'Terms of Service' },
+    { href: '/privacy-policy', label: 'Privacy Policy' },
+    { href: '/aml-policy', label: 'AML Policy' },
+    { href: '/terms-and-conditions', label: 'Terms & Conditions' },
     { href: '#', label: 'Cookie Policy' },
   ],
   countries: ['United States', 'United Kingdom', 'Germany', 'Japan', 'Australia'],
@@ -296,7 +296,7 @@ export const blogPosts: BlogPost[] = [
         imageHint: 'design wireframe',
         excerpt: 'A deep dive into the principles of user-centric design. Learn how to create interfaces that are not only beautiful but also intuitive, accessible, and a joy to use.',
         content: `
-<p>In today's competitive digital world, a great user experience (UX) is not a luxury; it's a necessity. User-centric design is a philosophy that places the user at the heart of the design process. This guide will walk you through the core principles.</p>
+<p>In today\'s competitive digital world, a great user experience (UX) is not a luxury; it\'s a necessity. User-centric design is a philosophy that places the user at the heart of the design process. This guide will walk you through the core principles.</p>
 
 <h3 class="font-headline text-xl font-semibold mt-6 mb-2">1. Empathize with Your Users</h3>
 <p>Before you write a single line of code or draw a single pixel, you must understand your users. Conduct user research, create user personas, and map out user journeys to gain deep insights into their needs, goals, and pain points.</p>
