@@ -18,6 +18,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { Animated, fadeUp } from '@/components/ui/animated';
+import { useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -36,16 +38,25 @@ const formSchema = z.object({
 
 export default function ContactPage() {
   const { toast } = useToast();
+  const searchParams = useSearchParams();
+  const subjectParam = searchParams.get('subject');
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: '',
       email: '',
-      subject: '',
+      subject: subjectParam || '',
       message: '',
     },
   });
+
+  useEffect(() => {
+    if (subjectParam) {
+      form.setValue('subject', subjectParam);
+    }
+  }, [subjectParam, form]);
+
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
