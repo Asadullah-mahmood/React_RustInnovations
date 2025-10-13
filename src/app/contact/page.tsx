@@ -119,7 +119,7 @@ export default function ContactPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
-                    <span>Lahore, Pakistan</span>
+                    <span>Jakarta, Indonesia</span>
                 </div>
             </div>
         </Animated>
