@@ -99,11 +99,14 @@ html {
   
   @keyframes scroll {
     to {
-      transform: translate(calc(-50% - 0.5rem));
+      transform: translate(calc(-50% - 2rem));
     }
   }
 
   .scrolling-logos {
     animation: scroll 40s linear infinite;
+  }
+  .scrolling-logos-mobile {
+    animation: scroll 20s linear infinite;
   }
 }

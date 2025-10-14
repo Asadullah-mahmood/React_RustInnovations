@@ -30,7 +30,7 @@ const registrations = [
 const ScrollingLogos = () => (
     <div
         className="group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_black_128px,_black_calc(100%-128px),_transparent_100%)]">
-        <div className="flex scrolling-logos group-hover:[animation-play-state:paused]">
+        <div className="flex scrolling-logos-mobile md:scrolling-logos group-hover:[animation-play-state:paused]">
             {[...registrations, ...registrations].map((reg, index) => (
                 <div key={index} className="mx-8 flex flex-shrink-0 flex-col items-center gap-4 text-center">
                     <div className="text-primary">{reg.logo}</div>
@@ -58,7 +58,7 @@ export default function AboutPage() {
             {/* Mission Section */}
             <section className="py-16 md:py-24">
                 <div className="container mx-auto grid grid-cols-1 items-center gap-12 px-4 md:grid-cols-2">
-                    <Animated as="div" variants={fadeUp}>
+                    <Animated as="div" variants={fadeUp} className="md:order-1">
                         <h2 className="font-headline text-3xl font-bold md:text-4xl">Our Mission</h2>
                         <p className="mt-4 text-muted-foreground">
                             To empower organizations with transformative technology and strategic guidance, enabling them to thrive in a rapidly evolving digital world. We are committed to building long-term partnerships based on trust, innovation, and a shared vision for success.
@@ -73,7 +73,7 @@ export default function AboutPage() {
                             ))}
                         </div>
                     </Animated>
-                    <Animated as="div" variants={scaleUp} className="overflow-hidden rounded-lg">
+                    <Animated as="div" variants={scaleUp} className="order-first overflow-hidden rounded-lg md:order-2">
                         {missionImage && (
                             <Image
                                 src={missionImage.imageUrl}
