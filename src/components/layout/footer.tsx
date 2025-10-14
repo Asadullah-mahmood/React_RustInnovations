@@ -74,8 +74,9 @@ export function Footer() {
 
               {/* Operational Countries */}
               <div>
-                <h3 className="font-headline text-lg font-semibold">
-                  Operational Countries
+                <h3 className="font-headline text-lg font-semibold whitespace-nowrap">
+                  <span className="hidden sm:inline">Operational Countries</span>
+                  <span className="inline sm:hidden">Operational Countries</span>
                 </h3>
                 <ul className="mt-4 space-y-2">
                   {footerLinks.countries.map(country => (

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, Package, X } from 'lucide-react';
+import './header.css';
 import { Logo } from '@/components/logo';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -82,8 +83,12 @@ export function Header() {
               <div className="hidden md:flex">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button variant="ghost">
-                      <Package className="mr-2" /> Products
+                    <Button variant="ghost" aria-label="Products" className="p-2">
+                      <span className="dot-grid-3x3">
+                        {Array.from({ length: 9 }).map((_, i) => (
+                          <span key={i} className="dot-grid-3x3-dot" />
+                        ))}
+                      </span>
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-[360px] p-4" align="end">

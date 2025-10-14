@@ -7,6 +7,7 @@ import {
   ShieldCheck,
   Lightbulb,
   TrendingUp,
+  MoreHorizontal,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -74,7 +75,7 @@ const Home = () => {
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
           <Animated variants={fadeUp}>
             <h1
-              className="relative select-none font-headline font-extrabold text-[6rem] leading-[1.05] animated-pinkred-gradient group"
+              className="relative select-none font-headline font-extrabold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[6rem] leading-[1.05] animated-pinkred-gradient group"
               style={{ fontFamily: 'Inter, PT Sans, Space Grotesk, sans-serif' }}
               id="home-rust-innovations-heading"
             >
@@ -82,12 +83,12 @@ const Home = () => {
             </h1>
           </Animated>
           <Animated variants={fadeUp} delay={0.1}>
-            <p className="mt-10 max-w-2xl text-2xl font-semibold text-secondary-foreground md:text-4xl tracking-wide" style={{ letterSpacing: '0.08em' }}>
+            <p className="mt-10 max-w-xs sm:max-w-md md:max-w-2xl text-base sm:text-xl md:text-3xl font-semibold text-secondary-foreground tracking-wide" style={{ letterSpacing: '0.08em' }}>
               .Optimise .Accurate .Succeed
             </p>
           </Animated>
           <Animated variants={fadeUp} delay={0.2}>
-            <p className="mt-4 max-w-lg text-sm text-gray-300 md:text-base line-clamp-3">
+            <p className="mt-4 max-w-xs sm:max-w-md md:max-w-lg text-xs sm:text-sm md:text-base text-gray-300 line-clamp-3">
               Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more.
             </p>
           </Animated>
