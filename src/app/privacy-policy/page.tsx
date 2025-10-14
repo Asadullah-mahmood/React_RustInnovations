@@ -1,10 +1,23 @@
 import { Animated, fadeUp } from '@/components/ui/animated';
+import TOC from '@/components/aml/TOC';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Privacy Policy | Rust Innovations',
     description: 'Read the Privacy Policy of Rust Innovations to understand how we collect, use, and protect your personal information.',
 };
+
+const SECTIONS = [
+    { id: 'info-collect', label: 'Information We Collect' },
+    { id: 'use-info', label: 'How We Use Your Information' },
+    { id: 'sharing', label: 'Data Sharing and Disclosure' },
+    { id: 'security', label: 'Data Security' },
+    { id: 'cookies', label: 'Cookies and Tracking Technologies' },
+    { id: 'rights', label: 'Your Rights' },
+    { id: 'links', label: 'Third-Party Links' },
+    { id: 'changes', label: 'Changes to This Policy' },
+    { id: 'contact', label: 'Contact Us' },
+]
 
 export default function PrivacyPolicyPage() {
     return (
@@ -17,53 +30,189 @@ export default function PrivacyPolicyPage() {
                     <p className="mt-2 text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
                 </header>
             </Animated>
-            
-            <Animated 
-                variants={fadeUp}
-                delay={0.2}
-                className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-foreground"
-            >
-                <p>
-                    Your privacy is important to us. It is Rust Innovations' policy to respect your privacy regarding any information we may collect from you across our website, and other sites we own and operate.
-                </p>
 
-                <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">1. Information We Collect</h2>
-                <p>
-                    We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.
-                </p>
-                <p>
-                    We may collect information like your name, email address, phone number, and other details you provide to us directly.
-                </p>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <aside className="md:col-span-1">
+                    <TOC sections={SECTIONS} />
+                </aside>
 
-                <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">2. How We Use Your Information</h2>
-                <p>
-                    We use the information we collect in various ways, including to:
-                </p>
-                <ul>
-                    <li>Provide, operate, and maintain our website</li>
-                    <li>Improve, personalize, and expand our website</li>
-                    <li>Understand and analyze how you use our website</li>
-                    <li>Develop new products, services, features, and functionality</li>
-                    <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
-                    <li>Send you emails</li>
-                    <li>Find and prevent fraud</li>
-                </ul>
+                <main className="md:col-span-2">
+                    <Animated 
+                        variants={fadeUp}
+                        delay={0.2}
+                        className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-foreground"
+                    >
+                        <section id="info-collect">
+                            <p className="text-foreground">
+                                At <strong>Rust Innovations</strong>, we are committed to protecting your privacy and ensuring the security of any personal information you provide. This Privacy Policy outlines how we collect, use, and protect your data.
+                            </p>
 
-                <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">3. Security</h2>
-                <p>
-                    The security of your personal information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.
-                </p>
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">1. Information We Collect</h2>
+                            <p className="text-foreground">
+                                We may collect the following types of information when you interact with our services:
+                            </p>
+                            <ul className="space-y-2 mt-4">
+                                <li className="flex items-start">
+                                    <span className=" mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Personal Information:</span>
+                                        <span className="text-muted-foreground"> Name, email address, phone number, billing information, and other details you provide voluntarily.</span>
+                                    </div>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Usage Data:</span>
+                                        <span className="text-muted-foreground"> Information about how you use our website, services, and tools, including IP address, browser type, and pages visited.</span>
+                                    </div>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Payment Information:</span>
+                                        <span className="text-muted-foreground"> Collected for processing transactions but not stored by us. We use secure third-party payment processors.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
 
-                <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">4. Changes to This Privacy Policy</h2>
-                <p>
-                    We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes.
-                </p>
-                
-                <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">Contact Us</h2>
-                <p>
-                    If you have any questions about this Privacy Policy, please contact us.
-                </p>
-            </Animated>
+                        <section id="use-info">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">2. How We Use Your Information</h2>
+                            <p className="text-foreground">
+                                We use your information to:
+                            </p>
+                            <ul className="space-y-2 mt-4">
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Provide and deliver services as requested.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Process payments and manage orders.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Communicate updates, offers, and relevant information.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Improve our website, services, and customer experience.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Comply with legal obligations and resolve disputes.</span>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section id="sharing">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">3. Data Sharing and Disclosure</h2>
+                            <p className="text-foreground">
+                                We do not sell or share your personal information with third parties, except in the following cases:
+                            </p>
+                            <ul className="space-y-2 mt-4">
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Service Providers:</span>
+                                        <span className="text-muted-foreground"> To trusted partners who help us deliver our services.</span>
+                                    </div>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Legal Obligations:</span>
+                                        <span className="text-muted-foreground"> If required by law or in response to legal processes.</span>
+                                    </div>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Business Transfers:</span>
+                                        <span className="text-muted-foreground"> In case of a merger, acquisition, or asset sale.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section id="security">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">4. Data Security</h2>
+                            <p className="text-muted-foreground">
+                                We implement appropriate security measures to protect your data from unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.
+                            </p>
+                        </section>
+
+                        <section id="cookies">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">5. Cookies and Tracking Technologies</h2>
+                            <p className="text-muted-foreground">
+                                We use cookies to enhance your experience on our website by storing preferences and tracking user activity. You can choose to disable cookies through your browser settings.
+                            </p>
+                        </section>
+
+                        <section id="rights">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">6. Your Rights</h2>
+                            <p className="text-foreground">
+                                You have the right to:
+                            </p>
+                            <ul className="space-y-2 mt-4">
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Access, update, or delete your personal information.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Opt-out of receiving marketing communications.</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <span className="text-muted-foreground">Request details about how we process your data.</span>
+                                </li>
+                            </ul>
+                            <p className="text-muted-foreground mt-4">
+                                To exercise these rights, please contact us using the details provided below.
+                            </p>
+
+                        </section>
+
+                        <section id="links">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">7. Third-Party Links</h2>
+                            <p className="text-muted-foreground">
+                                Our website may contain links to external sites. We are not responsible for the privacy practices of these websites and encourage you to read their policies.
+                            </p>
+                        </section>
+
+                        <section id="changes">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">8. Changes to This Policy</h2>
+                            <p className="text-muted-foreground">
+                                We may update this Privacy Policy periodically. Any changes will be posted on this page, and we encourage you to review it regularly.
+                            </p>
+                        </section>
+
+                        <section id="contact">
+                            <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">9. Contact Us</h2>
+                            <p className="text-foreground">
+                                If you have any questions or concerns regarding this Privacy Policy, please contact us at:
+                            </p>
+                            <ul className="space-y-2 mt-4">
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Email:</span>
+                                        <span className="text-muted-foreground"> info@rustinnovations.com</span>
+                                    </div>
+                                </li>
+                                <li className="flex items-start">
+                                    <span className="  mr-2 mt-1">•</span>
+                                    <div>
+                                        <span className="text-foreground font-medium">Phone:</span>
+                                        <span className="text-muted-foreground"> +92 326 4692 997</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
+                    </Animated>
+                </main>
+            </div>
         </div>
     );
 }

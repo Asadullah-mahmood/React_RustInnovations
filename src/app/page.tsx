@@ -1,5 +1,6 @@
 
 import Image from 'next/image';
+import React from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -54,31 +55,34 @@ const testimonials = [
   },
 ];
 
-export default function Home() {
+const Home = () => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-home');
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative h-[60vh] w-full text-white md:h-[80vh]">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover"
-            data-ai-hint={heroImage.imageHint}
-            priority
-          />
-        )}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover opacity-30"
+        >
+          <source src="/assets/bg.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-black/80 to-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
           <Animated variants={fadeUp}>
-            <h1 className="animated-gradient font-headline text-4xl font-bold md:text-7xl">
+            <h1
+              className="relative select-none font-headline font-extrabold text-[6rem] leading-[1.05] animated-pinkred-gradient group"
+              style={{ fontFamily: 'Inter, PT Sans, Space Grotesk, sans-serif' }}
+              id="home-rust-innovations-heading"
+            >
               Rust Innovations
             </h1>
           </Animated>
           <Animated variants={fadeUp} delay={0.1}>
-            <p className="mt-4 max-w-2xl text-2xl font-semibold text-secondary-foreground md:text-4xl">
+            <p className="mt-10 max-w-2xl text-2xl font-semibold text-secondary-foreground md:text-4xl tracking-wide" style={{ letterSpacing: '0.08em' }}>
               .Optimise .Accurate .Succeed
             </p>
           </Animated>
@@ -207,7 +211,7 @@ export default function Home() {
                       <AvatarImage
                         src={testimonial.image}
                         alt={testimonial.name}
-                        data-ai-hint={testimonial.imageHint}
+                        data-ai-hint={testimonial.imageHint ?? ''}
                       />
                       <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
                     </Avatar>
@@ -227,3 +231,6 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;
+

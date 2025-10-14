@@ -1,3 +1,27 @@
+/* Animated pink to red gradient for homepage heading */
+.animated-pinkred-gradient {
+  background: linear-gradient(90deg, #ec4899, #ef4444, #b50517, #ec4899);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 3s ease-in-out infinite;
+}
+/* Animated gradient for homepage heading */
+.animated-gradient {
+  background: linear-gradient(90deg, #b50517, #7d010e, #b50517);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 3s ease-in-out infinite;
+}
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', 'PT Sans', 'Space Grotesk', sans-serif;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -55,6 +79,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', 'PT Sans', 'Space Grotesk', sans-serif;
   }
 }
 
@@ -70,9 +95,7 @@
       background-position: 0% 50%;
     }
   }
-  .animated-gradient {
-    @apply bg-gradient-to-r from-red-500 via-pink-500 to-red-500 bg-[length:200%_auto] text-transparent bg-clip-text animate-[gradient-animation_3s_ease_infinite];
-  }
+  /* .animated-gradient now uses custom gradient above */
   
   @keyframes scroll {
     to {

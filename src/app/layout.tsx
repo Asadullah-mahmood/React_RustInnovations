@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/footer';
 import { PageProgress } from '@/components/page-progress';
 import { WhatsappFAB } from '@/components/whatsapp-fab';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import LenisProvider from './lenis-provider';
+import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
   title: 'Rust Innovations',
@@ -21,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -28,21 +31,23 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300..700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Space+Grotesk:wght@300..700&family=Inter:wght@100..900&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="font-body antialiased">
-        <TooltipProvider>
-          <PageProgress />
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1 pt-4">{children}</main>
-            <Footer />
-          </div>
-          <WhatsappFAB phoneNumber="+923264692997" />
-          <Toaster />
-        </TooltipProvider>
+        <LenisProvider>
+          <TooltipProvider>
+            <PageProgress />
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-1 pt-4">{children}</main>
+              <Footer />
+            </div>
+            <WhatsappFAB phoneNumber="+923264692997" />
+            <Toaster />
+          </TooltipProvider>
+        </LenisProvider>
       </body>
     </html>
   );
