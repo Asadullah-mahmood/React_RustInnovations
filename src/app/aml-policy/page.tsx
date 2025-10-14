@@ -1,3 +1,4 @@
+
 import { Animated, fadeUp } from '@/components/ui/animated';
 import TOC from '@/components/aml/TOC';
 import type { Metadata } from 'next';
@@ -31,7 +32,7 @@ export default function AMLPolicyPage() {
                 </header>
             </Animated>
 
-            <Animated variants={fadeUp} delay={0.2} className="prose prose-invert max-w-none">
+            <Animated variants={fadeUp} delay={0.2}>
                 {/* Two column layout: left overview (TOC), right detailed policy */}
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                     <aside className="md:col-span-1">
@@ -40,12 +41,12 @@ export default function AMLPolicyPage() {
 
                     <main className="md:col-span-2">
                         <section>
-                            <p>
+                            <p className="text-muted-foreground">
                                 Rust Innovations is committed to preventing money laundering and any activity that facilitates money laundering or the funding of terrorist or criminal activities.
                             </p>
 
                             <h2 id="introduction" className="font-headline text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
-                            <p>
+                            <p className="text-muted-foreground">
                                 Rust Innovations LLP is committed to combating money laundering, terrorist financing, and financial
                                 crimes. This policy is designed to ensure compliance with all applicable AML regulations in Pakistan and
                                 internationally, while maintaining the integrity of our operations across all jurisdictions where we
@@ -69,7 +70,7 @@ export default function AMLPolicyPage() {
                             </ul>
 
                             <h2 id="cdd" className="font-headline text-2xl font-semibold mt-8 mb-4">3. Client Due Diligence (CDD)</h2>
-                            <p>We strictly follow Customer Due Diligence (CDD) and Enhanced Due Diligence (EDD) procedures. No business activity is conducted with any client without proper due diligence. This includes:</p>
+                            <p className="text-muted-foreground">We strictly follow Customer Due Diligence (CDD) and Enhanced Due Diligence (EDD) procedures. No business activity is conducted with any client without proper due diligence. This includes:</p>
                             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                                 <li>
                                     <strong>Full identification:</strong> CNIC/passport, valid contact number, current address.
@@ -79,14 +80,14 @@ export default function AMLPolicyPage() {
                                 </li>
                                 <li>
                                     <strong>Client location:</strong> Geographical location is recorded and preserved for compliance review.
-                                </li>
+                               _                               </li>
                                 <li>
                                     <strong>Secure record-keeping:</strong> All client data including identity proof, contact details, and trade/payment history are securely stored in compliance with data protection policies.
                                 </li>
                             </ul>
 
                             <h2 id="transactions" className="font-headline text-2xl font-semibold mt-8 mb-4">4. Transaction Transparency & Banking Cooperation</h2>
-                            <p>
+                            <p className="text-muted-foreground">
                                 All business transactions are processed through official banking channels. We maintain detailed
                                 trade/payment history for each client to:
                             </p>
@@ -97,14 +98,14 @@ export default function AMLPolicyPage() {
                             </ul>
 
                             <h2 id="risk" className="font-headline text-2xl font-semibold mt-8 mb-4">5. Risk-Based Approach & Monitoring</h2>
-                            <p>
+                            <p className="text-muted-foreground">
                                 We apply a risk-based approach based on the nature of the client, country of origin, and transaction
                                 behavior. Higher-risk clients (e.g., cross-border payments) are subject to enhanced monitoring and
                                 documentation.
                             </p>
 
                             <h2 id="sanctions" className="font-headline text-2xl font-semibold mt-8 mb-4">6. Sanctions Screening</h2>
-                            <p>
+                            <p className="text-muted-foreground">
                                 Rust Innovations LLP strictly screens all clients and partners against the following international sanctions
                                 lists:
                             </p>
@@ -114,7 +115,7 @@ export default function AMLPolicyPage() {
                                 <li>U.S. Department of the Treasury – Office of Foreign Assets Control (OFAC)</li>
                                 <li>European Union Consolidated Sanctions List (EU)</li>
                             </ul>
-                            <p>
+                            <p className="text-muted-foreground">
                                 We do not engage in any transactions involving:
                             </p>
                             <ul className="list-disc list-inside space-y-2 text-muted-foreground">
@@ -124,7 +125,7 @@ export default function AMLPolicyPage() {
                             </ul>
 
                             <h2 id="jurisdiction" className="font-headline text-2xl font-semibold mt-8 mb-4">7. Jurisdictional Compliance</h2>
-                            <p>
+                            <p className="text-muted-foreground">
                                 We ensure full compliance with local AML and anti-terror financing laws in every country where we
                                 operate. These include:
                             </p>
@@ -148,15 +149,15 @@ export default function AMLPolicyPage() {
                             </ul>
 
                             {/* Signature and contact */}
-                            <div className="mt-12 border-t pt-8">
+                            <div className="mt-12 border-t pt-8 text-foreground">
                                 <p className="whitespace-pre-line">
-                                    <span className="text-red-500 font-semibold">Signed,</span>{"\n"}
-                                    <span className="text-foreground">President Director | Rust Innovations LLP</span>{"\n"}
-                                    <span className="text-foreground">Authorized Signatory</span>{"\n"}
-                                    <span className="text-foreground">Shahid Mahmood</span>
+                                    <span className="font-semibold text-red-500">Signed,</span>{"\n"}
+                                    <span >President Director | Rust Innovations LLP</span>{"\n"}
+                                    <span >Authorized Signatory</span>{"\n"}
+                                    <span >Shahid Mahmood</span>
                                 </p>
 
-                                <p className="mt-6 text-foreground">@info.runtinnovations.com</p>
+                                <p className="mt-6">info@rustinnovations.com</p>
                             </div>
                         </section>
                     </main>
