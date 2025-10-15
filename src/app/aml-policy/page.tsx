@@ -3,15 +3,7 @@
 
 import { Animated, fadeUp } from '@/components/ui/animated';
 import TOC from '@/components/aml/TOC';
-import type { Metadata } from 'next';
 import { useState, useEffect } from 'react';
-
-
-// Metadata is still useful for server rendering
-export const metadata: Metadata = {
-    title: 'AML Policy | Rust Innovations',
-    description: 'Our Anti-Money Laundering (AML) Policy at Rust Innovations.',
-};
 
 const SECTIONS = [
     { id: 'introduction', label: 'Introduction' },
