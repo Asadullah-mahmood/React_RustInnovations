@@ -35,7 +35,7 @@ export default function TOC({ sections }: { sections: Section[] }) {
   }
 
   return (
-    <nav className="sticky top-24 rounded-md border border-border/10 bg-card p-4">
+    <nav className="rounded-md border border-border/10 bg-card p-4 md:sticky md:top-24">
       <h3 className="font-headline text-lg font-semibold">Overview</h3>
       <p className="text-muted-foreground mt-2">Quick navigation to the main sections of this policy. Click any title to jump to the relevant section on the right.</p>
 
