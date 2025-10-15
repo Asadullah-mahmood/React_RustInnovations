@@ -1,8 +1,13 @@
 
+'use client';
+
 import { Animated, fadeUp } from '@/components/ui/animated';
 import TOC from '@/components/aml/TOC';
 import type { Metadata } from 'next';
+import { useState, useEffect } from 'react';
 
+
+// Metadata is still useful for server rendering
 export const metadata: Metadata = {
     title: 'AML Policy | Rust Innovations',
     description: 'Our Anti-Money Laundering (AML) Policy at Rust Innovations.',
@@ -21,6 +26,12 @@ const SECTIONS = [
 ]
 
 export default function AMLPolicyPage() {
+    const [lastUpdated, setLastUpdated] = useState('');
+
+    useEffect(() => {
+        setLastUpdated(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+    }, []);
+
     return (
         <div className="container mx-auto max-w-6xl px-4 py-16 md:py-24 scroll-smooth">
             <Animated variants={fadeUp}>
@@ -28,7 +39,7 @@ export default function AMLPolicyPage() {
                     <h1 className="font-headline text-3xl font-bold md:text-5xl">
                         Anti-Money Laundering (AML) Policy
                     </h1>
-                    <p className="mt-2 text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                    {lastUpdated && <p className="mt-2 text-muted-foreground">Last updated: {lastUpdated}</p>}
                 </header>
             </Animated>
 
@@ -80,7 +91,7 @@ export default function AMLPolicyPage() {
                                 </li>
                                 <li>
                                     <strong>Client location:</strong> Geographical location is recorded and preserved for compliance review.
-                               _                               </li>
+                                </li>
                                 <li>
                                     <strong>Secure record-keeping:</strong> All client data including identity proof, contact details, and trade/payment history are securely stored in compliance with data protection policies.
                                 </li>
