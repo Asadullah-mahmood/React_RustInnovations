@@ -5,13 +5,20 @@ import { motion, type Variants, type Transition, type HTMLMotionProps } from 'fr
 import { cn } from '@/lib/utils';
 import React from 'react';
 
-type AnimatedProps<T extends React.ElementType = 'div'> = HTMLMotionProps<T> & {
-  as?: T;
+// This defines the props for our component, including `className`
+type BaseAnimatedProps = {
   variants: Variants;
   transition?: Transition;
   triggerOnce?: boolean;
   delay?: number;
+  className?: string;
 };
+
+// This creates a polymorphic component that can be any HTML element
+export type AnimatedProps<T extends React.ElementType> = BaseAnimatedProps &
+  Omit<React.ComponentPropsWithoutRef<T>, keyof BaseAnimatedProps> & {
+    as?: T;
+  };
 
 export const Animated = React.forwardRef(
   <T extends React.ElementType = 'div'>(
