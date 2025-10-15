@@ -122,64 +122,7 @@ export const services: Service[] = [
   },
 ];
 
-export const products: Product[] = [
-  {
-    id: 'product-alpha',
-    name: 'Nexus Platform',
-    description: 'An all-in-one enterprise resource planning (ERP) system designed for maximum efficiency and scalability.',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-alpha')!.imageUrl,
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-alpha')!.imageHint,
-    specifications: [
-      'Cloud-Native Architecture',
-      'Modular & Customizable',
-      'Advanced AI-driven Analytics',
-      'Bank-Grade Security',
-      'Seamless Third-Party Integrations',
-    ],
-  },
-  {
-    id: 'product-beta',
-    name: 'Momentum AI',
-    description: 'A cutting-edge machine learning framework that accelerates your data science workflows from research to production.',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-beta')!.imageUrl,
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-beta')!.imageHint,
-    specifications: [
-      'Automated Model Training',
-      'Real-time Data Processing',
-      'Supports TensorFlow & PyTorch',
-      'Scalable Deployment Options',
-      'Comprehensive Visualization Tools',
-    ],
-  },
-  {
-    id: 'product-gamma',
-    name: 'ConnectSphere',
-    description: 'A unified communications platform that integrates chat, video conferencing, and project management into a single, intuitive interface.',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-gamma')!.imageUrl,
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-gamma')!.imageHint,
-    specifications: [
-      'HD Video & Audio',
-      'End-to-End Encryption',
-      'Kanban-style Task Boards',
-      'Unlimited File Storage',
-      'AI-Powered Meeting Summaries',
-    ],
-  },
-  {
-    id: 'product-delta',
-    name: 'Guardian Security Suite',
-    description: 'A proactive cybersecurity solution that provides 360-degree protection against internal and external threats.',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'product-delta')!.imageUrl,
-    imageHint: PlaceHolderImages.find(p => p.id === 'product-delta')!.imageHint,
-    specifications: [
-      'Threat Intelligence Feeds',
-      'Behavioral Anomaly Detection',
-      'Automated Incident Response',
-      'Vulnerability Scanning',
-      'Compliance Reporting',
-    ],
-  },
-];
+export const products: Product[] = [];
 
 export const teamMembers: TeamMember[] = [
   {

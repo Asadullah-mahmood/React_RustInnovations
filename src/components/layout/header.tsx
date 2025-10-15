@@ -92,29 +92,35 @@ export function Header() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-[360px] p-4" align="end">
-                    <div className="grid grid-cols-3 gap-4">
-                      {products.slice(0, 9).map((product) => (
-                        <DropdownMenuItem key={product.id} asChild className="p-0">
-                          <Link
-                            href={{
-                              pathname: '/contact',
-                              query: { subject: `Inquiry about ${product.name}` },
-                            }}
-                            className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
-                          >
-                            <Image
-                              src={product.imageUrl}
-                              alt={product.name}
-                              width={48}
-                              height={48}
-                              className="rounded-md object-cover"
-                              data-ai-hint={product.imageHint}
-                            />
-                            <p className="w-full truncate text-xs font-semibold">{product.name}</p>
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </div>
+                    {products.length > 0 ? (
+                      <div className="grid grid-cols-3 gap-4">
+                        {products.slice(0, 9).map((product) => (
+                          <DropdownMenuItem key={product.id} asChild className="p-0">
+                            <Link
+                              href={{
+                                pathname: '/contact',
+                                query: { subject: `Inquiry about ${product.name}` },
+                              }}
+                              className="flex h-full w-full flex-col items-center justify-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
+                            >
+                              <Image
+                                src={product.imageUrl}
+                                alt={product.name}
+                                width={48}
+                                height={48}
+                                className="rounded-md object-cover"
+                                data-ai-hint={product.imageHint}
+                              />
+                              <p className="w-full truncate text-xs font-semibold">{product.name}</p>
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="flex h-32 items-center justify-center text-muted-foreground">
+                        No item found
+                      </div>
+                    )}
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>
@@ -184,29 +190,35 @@ export function Header() {
           <DialogHeader>
             <DialogTitle>Products</DialogTitle>
           </DialogHeader>
-          <div className="grid grid-cols-3 gap-4 py-4">
-            {products.slice(0, 9).map((product) => (
-              <Link
-                key={product.id}
-                href={{
-                  pathname: '/contact',
-                  query: { subject: `Inquiry about ${product.name}` },
-                }}
-                onClick={() => setProductsModalOpen(false)}
-                className="flex flex-col items-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
-              >
-                <Image
-                  src={product.imageUrl}
-                  alt={product.name}
-                  width={64}
-                  height={64}
-                  className="rounded-md object-cover"
-                  data-ai-hint={product.imageHint}
-                />
-                <p className="w-full truncate text-xs font-semibold">{product.name}</p>
-              </Link>
-            ))}
-          </div>
+          {products.length > 0 ? (
+            <div className="grid grid-cols-3 gap-4 py-4">
+              {products.slice(0, 9).map((product) => (
+                <Link
+                  key={product.id}
+                  href={{
+                    pathname: '/contact',
+                    query: { subject: `Inquiry about ${product.name}` },
+                  }}
+                  onClick={() => setProductsModalOpen(false)}
+                  className="flex flex-col items-center gap-2 rounded-md p-2 text-center transition-colors hover:bg-accent"
+                >
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.name}
+                    width={64}
+                    height={64}
+                    className="rounded-md object-cover"
+                    data-ai-hint={product.imageHint}
+                  />
+                  <p className="w-full truncate text-xs font-semibold">{product.name}</p>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="flex h-32 items-center justify-center text-muted-foreground">
+              No item found
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </>
