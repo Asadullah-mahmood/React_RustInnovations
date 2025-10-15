@@ -67,7 +67,7 @@ const Home = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-30"
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
         >
           <source src="/assets/bg.mp4" type="video/mp4" />
         </video>
@@ -234,4 +234,5 @@ const Home = () => {
 }
 
 export default Home;
+
 

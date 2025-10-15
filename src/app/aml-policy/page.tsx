@@ -156,10 +156,10 @@ export default function AMLPolicyPage() {
                                     <span className="font-semibold text-primary">Signed,</span>{"\n"}
                                     <span >President Director | Rust Innovations LLP</span>{"\n"}
                                     <span >Authorized Signatory</span>{"\n"}
-                                    <span >Shahid Mahmood</span>
+                                    <span >Shahid Mahmood</span>{"\n"}
+                                    <span >info@rustinnovations.com</span>
                                 </p>
 
-                                <p className="mt-6">info@rustinnovations.com</p>
                             </div>
                         </section>
                     </main>
