@@ -1,31 +1,34 @@
 
 'use client';
 
-import { motion, type Variants, type Transition } from 'framer-motion';
+import { motion, type Variants, type Transition, type HTMLMotionProps } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import React from 'react';
 
-interface AnimatedProps extends React.HTMLAttributes<HTMLDivElement> {
+type AnimatedProps<T extends React.ElementType = 'div'> = HTMLMotionProps<T> & {
+  as?: T;
   variants: Variants;
   transition?: Transition;
   triggerOnce?: boolean;
   delay?: number;
-}
+};
 
-export const Animated = React.forwardRef<HTMLDivElement, AnimatedProps>(
-  (
+export const Animated = React.forwardRef(
+  <T extends React.ElementType = 'div'>(
     {
+      as,
       className,
       variants,
       transition,
       triggerOnce = true,
       delay = 0,
       ...props
-    },
-    ref
+    }: AnimatedProps<T>,
+    ref: React.Ref<any>
   ) => {
+    const Component = motion(as || 'div');
     return (
-      <motion.div
+      <Component
         ref={ref}
         className={cn(className)}
         initial="hidden"
