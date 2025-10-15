@@ -85,6 +85,18 @@
       "imageHint": "data scientist"
     },
     {
+      "id": "team-member7",
+      "description": "Portrait of an operations manager",
+      "imageUrl": "https://picsum.photos/seed/307/400/400",
+      "imageHint": "operations manager"
+    },
+    {
+      "id": "team-member8",
+      "description": "Portrait of a marketing director",
+      "imageUrl": "https://picsum.photos/seed/308/400/400",
+      "imageHint": "marketing director"
+    },
+    {
       "id": "product-alpha",
       "description": "Sleek, futuristic electronic device",
       "imageUrl": "https://picsum.photos/seed/401/500/500",
