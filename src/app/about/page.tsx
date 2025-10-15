@@ -118,7 +118,7 @@ export default function AboutPage() {
                                             <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                         </Avatar>
                                         <h3 className="mt-4 font-headline text-xl font-semibold">{member.name}</h3>
-                                        <p className="text-sm text-primary">{member.title}</p>
+                                        <p className="font-headline text-sm font-bold text-primary">{member.title}</p>
                                     </CardContent>
                                 </Card>
                             </Animated>
