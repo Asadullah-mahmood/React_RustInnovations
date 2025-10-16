@@ -128,7 +128,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: '1',
     name: 'Mr. Shahid Rajpot',
-    title: 'CEO',
+    title: 'CEO & Founder',
     imageUrl: '/assets/ceo.jpeg',
     imageHint: 'Founder and CEO of Rust Innovations',
   },
