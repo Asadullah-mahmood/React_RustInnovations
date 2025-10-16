@@ -136,7 +136,7 @@ export const teamMembers: TeamMember[] = [
     id: '2',
     name: 'Mr. Zahid Mahmood',
     title: 'CFO',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'testimonial2')!.imageUrl,
+    imageUrl: '/assets/male.png',
     imageHint: 'professional portrait male',
   },
   {
@@ -150,14 +150,14 @@ export const teamMembers: TeamMember[] = [
     id: '4',
     name: 'Asadullah',
     title: 'COO',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'team-member1')!.imageUrl,
+    imageUrl: '/assets/male.png',
     imageHint: 'professional portrait male',
   },
   {
     id: '5',
     name: 'Muhammad Usman',
     title: 'CH (UAE)',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'team-member5')!.imageUrl,
+    imageUrl: '/assets/male.png',
     imageHint: 'professional portrait male',
   },
   {
@@ -171,14 +171,14 @@ export const teamMembers: TeamMember[] = [
     id: '7',
     name: 'Farhan Kabeer',
     title: 'OM (PK)',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'team-member7')!.imageUrl,
+    imageUrl: '/assets/male.png',
     imageHint: 'professional portrait male',
   },
   {
     id: '8',
     name: 'Rubab Gull',
     title: 'GMD',
-    imageUrl: PlaceHolderImages.find(p => p.id === 'testimonial1')!.imageUrl,
+    imageUrl: '/assets/female.png',
     imageHint: 'professional portrait female',
   },
 ];

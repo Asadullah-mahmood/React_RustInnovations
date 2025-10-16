@@ -7,6 +7,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 import { Handshake, Target, Gem, Landmark, Building, Briefcase } from 'lucide-react';
 import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
+import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
     title: 'About Us | Rust Innovations',
@@ -113,7 +114,10 @@ export default function AboutPage() {
                              <Animated as="div" key={member.id} variants={scaleUp} delay={i * 0.1}>
                                 <Card className="overflow-hidden text-center transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                                     <CardContent className="p-6">
-                                        <Avatar className="mx-auto h-32 w-32 border-4 border-primary/20">
+                                        <Avatar className={cn(
+                                            "mx-auto h-32 w-32 border-4 border-primary/20",
+                                            member.imageUrl.includes('male.png') || member.imageUrl.includes('female.png') ? "bg-muted" : ""
+                                        )}>
                                             <AvatarImage src={member.imageUrl} alt={member.name} data-ai-hint={member.imageHint} />
                                             <AvatarFallback>{member.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                         </Avatar>

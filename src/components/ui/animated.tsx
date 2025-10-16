@@ -11,13 +11,13 @@ type BaseAnimatedProps = {
   transition?: Transition;
   triggerOnce?: boolean;
   delay?: number;
-  className?: string;
 };
 
 // This creates a polymorphic component that can be any HTML element
 export type AnimatedProps<T extends React.ElementType> = BaseAnimatedProps &
-  Omit<React.ComponentPropsWithoutRef<T>, keyof BaseAnimatedProps> & {
+  Omit<React.ComponentPropsWithoutRef<T>, keyof BaseAnimatedProps | 'className'> & {
     as?: T;
+    className?: string;
   };
 
 export const Animated = React.forwardRef(
