@@ -151,7 +151,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Asadullah',
     title: 'COO',
     imageUrl: '',
-    imageHint: 'professional portrait',
+imageHint: 'professional portrait',
   },
   {
     id: '5',
@@ -171,7 +171,7 @@ export const teamMembers: TeamMember[] = [
     id: '7',
     name: 'Farhan Kabeer',
     title: 'OM (PK)',
-imageUrl: '',
+    imageUrl: '',
     imageHint: 'professional portrait',
   },
   {
