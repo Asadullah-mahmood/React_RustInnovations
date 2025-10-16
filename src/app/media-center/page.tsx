@@ -1,15 +1,17 @@
 
 import Image from 'next/image';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { newsItems } from '@/lib/data';
+import Link from 'next/link';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { blogPosts } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
 import { format } from 'date-fns';
-import { ArticleAnalyzer } from './article-analyzer';
+import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
-    title: 'Media Center | Rust Innovations',
-    description: 'Stay up-to-date with the latest news, announcements, and insights from Rust Innovations. Explore our AI-powered article relevance analyzer.',
+    title: 'Media & Blog | Rust Innovations',
+    description: 'Stay up-to-date with the latest news, announcements, and insights from Rust Innovations. Explore our articles and company updates.',
 };
 
 export default function MediaCenterPage() {
@@ -31,39 +33,61 @@ export default function MediaCenterPage() {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-black/80 to-black/60" />
                 <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-                    <h1 className="font-headline text-4xl font-bold md:text-5xl">
-                        Media Center
-                    </h1>
-                    <p className="mt-4 max-w-2xl text-lg text-gray-300">
-                        News, announcements, and insights from the forefront of technology.
-                    </p>
+                    <Animated variants={fadeUp}>
+                        <h1 className="font-headline text-4xl font-bold md:text-5xl">
+                            Media & Blog
+                        </h1>
+                        <p className="mt-4 max-w-2xl text-lg text-gray-300">
+                            Insights, articles, and news from the team at Rust Innovations.
+                        </p>
+                    </Animated>
                 </div>
             </div>
 
-            <div className="container mx-auto grid grid-cols-1 gap-16 px-4 py-16 md:grid-cols-3 md:py-24">
-                {/* News Section */}
-                <div className="md:col-span-2">
-                    <h2 className="font-headline text-3xl font-bold md:text-4xl">Latest News</h2>
-                    <div className="mt-8 space-y-8">
-                        {newsItems.map(item => (
-                            <Card key={item.id}>
+            {/* Blog Posts Section */}
+            <div className="container mx-auto px-4 py-16 md:py-24">
+                 <Animated variants={fadeUp} className="text-center mb-16">
+                    <h2 className="font-headline text-3xl font-bold md:text-4xl">From the Blog</h2>
+                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                        Explore our latest articles and insights.
+                    </p>
+                </Animated>
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    {blogPosts.map((post, i) => (
+                        <Animated key={post.id} variants={scaleUp} delay={i * 0.1}>
+                            <Card className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
+                                 <Link href={`/blog/${post.id}`} className="block">
+                                    <div className="relative h-56 w-full">
+                                        <Image
+                                            src={post.imageUrl}
+                                            alt={post.title}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            data-ai-hint={post.imageHint}
+                                        />
+                                    </div>
+                                </Link>
                                 <CardHeader>
-                                    <CardTitle className="font-headline text-xl">{item.title}</CardTitle>
-                                    <p className="text-sm text-muted-foreground">
-                                        {format(new Date(item.date), 'MMMM d, yyyy')}
+                                    <div className="flex flex-wrap gap-2">
+                                        {post.tags.map(tag => (
+                                            <Badge key={tag} variant="secondary">{tag}</Badge>
+                                        ))}
+                                    </div>
+                                    <CardTitle className="pt-2 font-headline text-xl">
+                                        <Link href={`/blog/${post.id}`} className="hover:text-primary transition-colors">
+                                            {post.title}
+                                        </Link>
+                                    </CardTitle>
+                                     <p className="text-sm text-muted-foreground">
+                                        By {post.author} on {format(new Date(post.date), 'MMMM d, yyyy')}
                                     </p>
                                 </CardHeader>
-                                <CardContent>
-                                    <CardDescription>{item.excerpt}</CardDescription>
+                                <CardContent className="flex-1">
+                                   <p className="text-muted-foreground">{post.excerpt}</p>
                                 </CardContent>
                             </Card>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Article Analyzer Section */}
-                <div className="md:col-span-1">
-                    <ArticleAnalyzer />
+                        </Animated>
+                    ))}
                 </div>
             </div>
         </div>

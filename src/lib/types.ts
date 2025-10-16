@@ -1,3 +1,4 @@
+
 import type { LucideIcon } from 'lucide-react';
 
 export type NavLink = {
@@ -37,13 +38,6 @@ export type FooterLinks = {
   ourPolicy: NavLink[];
   countries: string[];
 };
-
-export type NewsItem = {
-    id:string;
-    title: string;
-    date: string;
-    excerpt: string;
-}
 
 export type BlogPost = {
     id: string;

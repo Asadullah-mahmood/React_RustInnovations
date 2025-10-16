@@ -1,5 +1,5 @@
 
-import type { NavLink, Service, Product, TeamMember, FooterLinks, NewsItem, BlogPost } from './types';
+import type { NavLink, Service, Product, TeamMember, FooterLinks, BlogPost } from './types';
 import { PlaceHolderImages } from './placeholder-images';
 import { Bot, Code, Brush, BarChart3, Database, Cloud, Bitcoin, PenSquare, Type, Video, ShoppingCart, Search, Building, Facebook, Instagram, Twitter, Linkedin, Github } from 'lucide-react';
 
@@ -128,7 +128,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: '1',
     name: 'Mr. Shahid Rajpot',
-    title: 'CEO & Founder',
+    title: 'Founder & CEO',
     imageUrl: '/assets/ceo.jpeg',
     imageHint: 'Founder and CEO of Rust Innovations',
   },
@@ -198,27 +198,6 @@ export const footerLinks: FooterLinks = {
   ],
   countries: ['Pakistan', 'Indonesia', 'UAE'],
 };
-
-export const newsItems: NewsItem[] = [
-  {
-    id: '1',
-    title: 'Rust Innovations Unveils Groundbreaking "Nexus Platform"',
-    date: '2024-07-15',
-    excerpt: 'Today, Rust Innovations announced the launch of its new flagship ERP system, the Nexus Platform, set to redefine industry standards for efficiency and integration. The platform promises to deliver unparalleled performance and AI-driven insights.',
-  },
-  {
-    id: '2',
-    title: 'Rust Innovations Ranks in Top 5 of "Innovator of the Year" Awards',
-    date: '2024-06-28',
-    excerpt: 'In recognition of its pioneering work in machine learning and custom development, Rust Innovations has been named a top-five finalist in the prestigious annual Innovator of the Year awards.',
-  },
-  {
-    id: '3',
-    title: 'New Partnership with QuantumLeap Inc. to Drive Digital Transformation',
-    date: '2024-05-10',
-    excerpt: 'Rust Innovations is proud to announce a strategic partnership with QuantumLeap Inc. to accelerate their digital transformation journey, focusing on cloud infrastructure and data analytics.',
-  },
-];
 
 export const blogPosts: BlogPost[] = [
     {
