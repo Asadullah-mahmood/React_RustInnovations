@@ -33,10 +33,10 @@ const ScrollingLogos = () => (
     <div className="relative mt-12 w-full overflow-hidden mask-gradient">
         <div className="flex w-max animate-scroll">
             {[...registrations, ...registrations].map((reg, index) => (
-                <div key={`${reg.name}-${index}`} className="w-48 px-4">
+                <div key={`${reg.name}-${index}`} className="w-64 px-4">
                     <Card className="group h-full w-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
                         <CardContent className="flex h-full flex-col items-center justify-center p-4">
-                            <div className="relative flex h-16 w-full items-center justify-center">
+                            <div className="relative flex h-20 w-full items-center justify-center">
                                 <Image 
                                     src={reg.logo} 
                                     alt={`${reg.name} logo`} 
