@@ -28,21 +28,28 @@ const registrations = [
     { name: "Lahore Chamber", logo: "/assets/chamber_lahore.png" },
 ];
 
-const ScrollingLogos = () => (
-    <div
-        className="group relative overflow-hidden whitespace-nowrap py-10 [mask-image:_linear-gradient(to_right,_transparent_0,_black_128px,_black_calc(100%-128px),_transparent_100%)]">
-        <div className="flex scrolling-logos-mobile md:scrolling-logos group-hover:[animation-play-state:paused]">
-            {[...registrations, ...registrations].map((reg, index) => (
-                <div key={index} className="mx-8 flex flex-shrink-0 flex-col items-center gap-4 text-center">
-                    <div className="text-primary">
-                        <Image src={reg.logo} alt={`${reg.name} logo`} width={48} height={48} className="h-12 w-12 object-contain" />
-                    </div>
-                    <p className="font-headline text-lg font-semibold">{reg.name}</p>
-                </div>
-            ))}
-        </div>
+const RegistrationsGrid = () => (
+    <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+        {registrations.map((reg, index) => (
+            <Animated as="div" key={reg.name} variants={scaleUp} delay={index * 0.1}>
+                <Card className="group h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
+                    <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
+                        <div className="relative h-20 w-20">
+                            <Image 
+                                src={reg.logo} 
+                                alt={`${reg.name} logo`} 
+                                fill
+                                className="object-contain transition-transform duration-300 group-hover:scale-110" 
+                            />
+                        </div>
+                        <p className="mt-4 font-headline text-sm font-semibold">{reg.name}</p>
+                    </CardContent>
+                </Card>
+            </Animated>
+        ))}
     </div>
 );
+
 
 export default function AboutPage() {
     const missionImage = PlaceHolderImages.find(p => p.id === 'about-mission');
@@ -92,12 +99,15 @@ export default function AboutPage() {
             </section>
             
             {/* Registrations Section */}
-            <section className="py-16 md:py-24">
+            <section className="bg-card/30 py-16 md:py-24">
                 <div className="container mx-auto px-4">
                     <Animated as="div" variants={fadeUp} className="text-center">
                         <h2 className="font-headline text-3xl font-bold md:text-4xl">Registered With</h2>
+                        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+                            We proudly adhere to regulatory standards across multiple jurisdictions.
+                        </p>
                     </Animated>
-                    <ScrollingLogos />
+                    <RegistrationsGrid />
                 </div>
             </section>
 
