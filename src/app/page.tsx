@@ -2,7 +2,7 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -16,7 +16,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { services } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
-import { cn } from '@/lib/utils';
 
 const features = [
   {
@@ -60,15 +59,6 @@ const testimonials = [
 
 const Home = () => {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-home');
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    // Mount after a short delay to allow video to start loading
-    const timer = setTimeout(() => {
-      setIsMounted(true);
-    }, 100); // 100ms delay
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="flex flex-col">
@@ -79,13 +69,12 @@ const Home = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-5"
+          className="absolute inset-0 h-full w-full object-cover opacity-10"
         >
           <source src="/assets/bg.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-background via-black/80 to-black/60" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
-           <div className={cn("transition-opacity duration-1000", isMounted ? "opacity-100" : "opacity-0")}>
             <Animated variants={fadeUp}>
               <h1
                 className="relative select-none font-headline font-extrabold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[6rem] leading-[1.05] animated-pinkred-gradient group"
@@ -113,7 +102,6 @@ const Home = () => {
                 </Link>
               </Button>
             </Animated>
-          </div>
         </div>
       </section>
 
