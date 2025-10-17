@@ -178,7 +178,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: '8',
     name: 'Rubab Gull',
-    title: 'Global Marketing Director',
+    title: 'GMD (Global Marketing Director)',
     imageUrl: '/assets/female.png',
     imageHint: 'professional portrait female',
   },
@@ -250,5 +250,7 @@ export const blogPosts: BlogPost[] = [
 
 
 
+
+    
 
     
