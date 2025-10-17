@@ -136,21 +136,21 @@ export const teamMembers: TeamMember[] = [
   {
     id: '2',
     name: 'Mr. Zahid Mahmood',
-    title: 'CFO (Chief Financial Officer)',
+    title: 'Chief Financial Officer',
     imageUrl: '/assets/male.png',
     imageHint: 'professional portrait male',
   },
   {
     id: '3',
     name: 'Zubair Zahid',
-    title: 'CTO (Chief Technology Officer)',
+    title: 'Chief Technology Officer',
     imageUrl: '/assets/cto.png',
     imageHint: 'CTO of Rust Innovations',
   },
   {
     id: '4',
     name: 'Asadullah',
-    title: 'COO (Chief Operating Officer)',
+    title: 'Chief Operating Officer',
     imageUrl: '/assets/coo.jpeg',
     imageHint: 'COO of Rust Innovations',
   },
@@ -178,7 +178,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: '8',
     name: 'Rubab Gull',
-    title: 'GMD (Global Marketing Director)',
+    title: 'Global Marketing Director',
     imageUrl: '/assets/female.png',
     imageHint: 'professional portrait female',
   },
