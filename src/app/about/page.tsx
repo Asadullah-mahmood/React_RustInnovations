@@ -5,12 +5,12 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { teamMembers } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { Metadata } from 'next';
-import { Handshake, Target, Gem, Landmark, Building, Briefcase } from 'lucide-react';
+import { Handshake, Target, Gem } from 'lucide-react';
 import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-    title: 'About Us | Rust Innovations',
+    title: 'About Us',
     description: 'Learn about the mission, values, and dedicated team behind Rust Innovations, driving innovation and excellence in the industry.',
 };
 
@@ -21,11 +21,11 @@ const values = [
 ];
 
 const registrations = [
-    { name: "SECP", logo: <Landmark className="h-12 w-12" /> },
-    { name: "Bank of Indonesia", logo: <Landmark className="h-12 w-12" /> },
-    { name: "State Bank of Pakistan", logo: <Landmark className="h-12 w-12" /> },
-    { name: "OJK", logo: <Building className="h-12 w-12" /> },
-    { name: "Lahore Chamber", logo: <Briefcase className="h-12 w-12" /> },
+    { name: "SECP", logo: "/assets/SECP.png" },
+    { name: "Bank of Indonesia", logo: "/assets/BI.png" },
+    { name: "State Bank of Pakistan", logo: "/assets/SBP.png" },
+    { name: "OJK", logo: "/assets/ojk.png" },
+    { name: "Lahore Chamber", logo: "/assets/chamber_lahore.png" },
 ];
 
 const ScrollingLogos = () => (
@@ -34,7 +34,9 @@ const ScrollingLogos = () => (
         <div className="flex scrolling-logos-mobile md:scrolling-logos group-hover:[animation-play-state:paused]">
             {[...registrations, ...registrations].map((reg, index) => (
                 <div key={index} className="mx-8 flex flex-shrink-0 flex-col items-center gap-4 text-center">
-                    <div className="text-primary">{reg.logo}</div>
+                    <div className="text-primary">
+                        <Image src={reg.logo} alt={`${reg.name} logo`} width={48} height={48} className="h-12 w-12 object-contain" />
+                    </div>
                     <p className="font-headline text-lg font-semibold">{reg.name}</p>
                 </div>
             ))}
