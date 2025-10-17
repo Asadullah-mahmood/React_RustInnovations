@@ -6,8 +6,9 @@ import Lenis from 'lenis';
 export function useLenis() {
   useEffect(() => {
     const lenis = new Lenis({
-      lerp: 0.08, // inertia (0 = instant, 1 = never)
-      smoothWheel: true, // enable smooth on desktop
+      lerp: 0.1, // Adjusted for more 'elastic' feel
+      smoothWheel: true,
+      smoothTouch: true, // Added for mobile elasticity
     });
 
     function raf(time: number) {
