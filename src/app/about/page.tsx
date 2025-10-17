@@ -26,19 +26,21 @@ const registrations = [
     { name: "State Bank of Pakistan", logo: "/assets/SBP.png" },
     { name: "OJK", logo: "/assets/ojk.png" },
     { name: "Lahore Chamber", logo: "/assets/chamber_lahore.png" },
+    { name: "IPO", logo: "/assets/IPO.png" },
 ];
 
 const RegistrationsGrid = () => (
-    <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+    <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
         {registrations.map((reg, index) => (
             <Animated as="div" key={reg.name} variants={scaleUp} delay={index * 0.1}>
                 <Card className="group h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
                     <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
-                        <div className="relative h-20 w-20">
+                        <div className="relative h-20 w-20 flex items-center justify-center">
                             <Image 
                                 src={reg.logo} 
                                 alt={`${reg.name} logo`} 
-                                fill
+                                width={80}
+                                height={80}
                                 className="object-contain transition-transform duration-300 group-hover:scale-110" 
                             />
                         </div>
