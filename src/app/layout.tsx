@@ -10,7 +10,10 @@ import LenisProvider from './lenis-provider';
 import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
-  title: 'Rust Innovations',
+  title: {
+    default: 'Rust Innovations',
+    template: '%s | Rust Innovations',
+  },
   description:
     'Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more.',
 };
