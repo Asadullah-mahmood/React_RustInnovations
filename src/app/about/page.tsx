@@ -22,7 +22,7 @@ const values = [
 
 const registrations = [
     { name: "SECP", logo: "/assets/SECP.png" },
-    { name: "Bank of Indonesia", logo: "/assets/BI.png" },
+    { name: "Bank of Indonesia", logo: "/assets/bank_indonesia.png" },
     { name: "State Bank of Pakistan", logo: "/assets/SBP.png" },
     { name: "OJK", logo: "/assets/ojk.png" },
     { name: "Lahore Chamber", logo: "/assets/chamber_lahore.png" },
@@ -33,14 +33,14 @@ const ScrollingLogos = () => (
     <div className="relative mt-12 w-full overflow-hidden mask-gradient">
         <div className="flex w-max animate-scroll">
             {[...registrations, ...registrations].map((reg, index) => (
-                <div key={`${reg.name}-${index}`} className="w-64 px-4">
+                <div key={`${reg.name}-${index}`} className="w-72 px-4">
                     <Card className="group h-full w-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
                         <CardContent className="flex h-full flex-col items-center justify-center p-4">
-                            <div className="relative flex h-20 w-full items-center justify-center">
+                            <div className="relative flex h-24 w-full items-center justify-center">
                                 <Image 
                                     src={reg.logo} 
                                     alt={`${reg.name} logo`} 
-                                    width={100}
+                                    width={80}
                                     height={64}
                                     className="object-contain transition-transform duration-300 group-hover:scale-110" 
                                 />
