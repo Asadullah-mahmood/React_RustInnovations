@@ -5,7 +5,7 @@ import { Logo } from '@/components/logo';
 import { footerLinks } from '@/lib/data';
 
 export function Footer() {
-  const quickLinks = footerLinks.quickLinks.filter(link => link.href !== '/products');
+  const quickLinks = footerLinks.quickLinks;
   return (
     <footer className="border-t bg-card text-card-foreground">
       <div className="container mx-auto px-4 py-12">

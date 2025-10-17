@@ -9,7 +9,6 @@ export const navLinks: NavLink[] = [
   { href: '/services', label: 'Services' },
   { href: '/about', label: 'About Us' },
   { href: '/media-center', label: 'Media Center' },
-  { href: '/products', label: 'Products' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
@@ -124,40 +123,7 @@ export const services: Service[] = [
   },
 ];
 
-export const products: Product[] = [
-    {
-        id: 'product-alpha',
-        name: 'Product Alpha',
-        description: 'A revolutionary product that will change the way you work. Built for performance and reliability.',
-        imageUrl: PlaceHolderImages.find(p => p.id === 'product-alpha')!.imageUrl,
-        imageHint: PlaceHolderImages.find(p => p.id === 'product-alpha')!.imageHint,
-        specifications: ['16-core CPU', '1TB NVMe SSD', '64GB DDR5 RAM', '4K Display']
-    },
-    {
-        id: 'product-beta',
-        name: 'Product Beta',
-        description: 'An industrial-grade solution for complex problems. Unmatched power and durability.',
-        imageUrl: PlaceHolderImages.find(p => p.id === 'product-beta')!.imageUrl,
-        imageHint: PlaceHolderImages.find(p => p.id === 'product-beta')!.imageHint,
-        specifications: ['ARM-based Architecture', 'IP67 Rated', '24-hour Battery Life', '5G Connectivity']
-    },
-    {
-        id: 'product-gamma',
-        name: 'Product Gamma',
-        description: 'A software suite that provides deep insights into your data. Visualize your success.',
-        imageUrl: PlaceHolderImages.find(p => p.id === 'product-gamma')!.imageUrl,
-        imageHint: PlaceHolderImages.find(p => p.id === 'product-gamma')!.imageHint,
-        specifications: ['Real-time Analytics', 'AI-powered Insights', 'Customizable Dashboards', 'Secure Cloud Sync']
-    },
-     {
-        id: 'product-delta',
-        name: 'Product Delta',
-        description: 'A powerful server for your growing business needs.',
-        imageUrl: PlaceHolderImages.find(p => p.id === 'product-delta')!.imageUrl,
-        imageHint: PlaceHolderImages.find(p => p.id === 'product-delta')!.imageHint,
-        specifications: ['32-core CPU', '10TB NVMe SSD', '128GB DDR5 RAM', '10G Ethernet']
-    }
-];
+export const products: Product[] = [];
 
 export const teamMembers: TeamMember[] = [
   {
@@ -280,5 +246,6 @@ export const blogPosts: BlogPost[] = [
         `,
     },
 ];
+
 
 
