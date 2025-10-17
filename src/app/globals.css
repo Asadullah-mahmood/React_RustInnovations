@@ -98,15 +98,20 @@ html {
   /* .animated-gradient now uses custom gradient above */
   
   @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
     to {
-      transform: translate(calc(-50% - 2rem));
+      transform: translateX(-50%);
     }
   }
 
-  .scrolling-logos {
-    animation: scroll 40s linear infinite;
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
   }
-  .scrolling-logos-mobile {
-    animation: scroll 20s linear infinite;
+
+  .mask-gradient {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
   }
 }

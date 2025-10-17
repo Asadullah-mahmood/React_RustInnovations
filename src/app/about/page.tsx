@@ -29,26 +29,28 @@ const registrations = [
     { name: "IPO", logo: "/assets/IPO.png" },
 ];
 
-const RegistrationsGrid = () => (
-    <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-        {registrations.map((reg, index) => (
-            <Animated as="div" key={reg.name} variants={scaleUp} delay={index * 0.1}>
-                <Card className="group h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10">
-                    <CardContent className="flex h-full flex-col items-center justify-center p-6 text-center">
-                        <div className="relative h-20 w-20 flex items-center justify-center">
-                            <Image 
-                                src={reg.logo} 
-                                alt={`${reg.name} logo`} 
-                                width={80}
-                                height={80}
-                                className="object-contain transition-transform duration-300 group-hover:scale-110" 
-                            />
-                        </div>
-                        <p className="mt-4 font-headline text-sm font-semibold">{reg.name}</p>
-                    </CardContent>
-                </Card>
-            </Animated>
-        ))}
+const ScrollingLogos = () => (
+    <div className="relative mt-12 w-full overflow-hidden mask-gradient">
+        <div className="flex w-max animate-scroll">
+            {[...registrations, ...registrations].map((reg, index) => (
+                <div key={`${reg.name}-${index}`} className="w-48 px-4">
+                    <Card className="group h-full w-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
+                        <CardContent className="flex h-full flex-col items-center justify-center p-4">
+                            <div className="relative flex h-16 w-full items-center justify-center">
+                                <Image 
+                                    src={reg.logo} 
+                                    alt={`${reg.name} logo`} 
+                                    width={100}
+                                    height={64}
+                                    className="object-contain transition-transform duration-300 group-hover:scale-110" 
+                                />
+                            </div>
+                            <p className="mt-2 text-center font-headline text-xs font-semibold">{reg.name}</p>
+                        </CardContent>
+                    </Card>
+                </div>
+            ))}
+        </div>
     </div>
 );
 
@@ -109,7 +111,7 @@ export default function AboutPage() {
                             We proudly adhere to regulatory standards across multiple jurisdictions.
                         </p>
                     </Animated>
-                    <RegistrationsGrid />
+                    <ScrollingLogos />
                 </div>
             </section>
 
