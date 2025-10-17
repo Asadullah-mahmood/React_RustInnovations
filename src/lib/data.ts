@@ -185,8 +185,8 @@ export const teamMembers: TeamMember[] = [
     id: '4',
     name: 'Asadullah',
     title: 'COO',
-    imageUrl: '/assets/male.png',
-    imageHint: 'professional portrait male',
+    imageUrl: '/assets/coo.jpeg',
+    imageHint: 'COO of Rust Innovations',
   },
   {
     id: '5',
@@ -280,4 +280,5 @@ export const blogPosts: BlogPost[] = [
         `,
     },
 ];
+
 
