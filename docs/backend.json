@@ -1,0 +1,60 @@
+
+{
+  "entities": {
+    "BlogPost": {
+      "title": "Blog Post",
+      "description": "Represents a single blog post article.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The title of the blog post."
+        },
+        "author": {
+          "type": "string",
+          "description": "The name of the post's author."
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The publication date of the post."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "An array of tags or categories."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "The URL for the post's main image."
+        },
+        "imageHint": {
+          "type": "string",
+          "description": "A hint for AI image generation tools."
+        },
+        "excerpt": {
+          "type": "string",
+          "description": "A short summary of the blog post."
+        },
+        "content": {
+          "type": "string",
+          "description": "The full HTML content of the blog post."
+        }
+      },
+      "required": ["title", "author", "date", "excerpt", "content", "imageUrl"]
+    }
+  },
+  "auth": {
+    "providers": []
+  },
+  "firestore": {
+    "/blogs/{blogId}": {
+      "schema": {
+        "$ref": "#/entities/BlogPost"
+      },
+      "description": "Stores all the blog post documents."
+    }
+  }
+}
