@@ -80,6 +80,7 @@ html {
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', 'PT Sans', 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
   }
 }
 
