@@ -1,3 +1,4 @@
+
 import { Animated, fadeUp } from '@/components/ui/animated';
 import TOC from '@/components/aml/TOC';
 import type { Metadata } from 'next';
@@ -27,7 +28,7 @@ export default function PrivacyPolicyPage() {
                     <h1 className="font-headline text-3xl font-bold md:text-5xl">
                         Privacy Policy
                     </h1>
-                    <p className="mt-2 text-muted-foreground">Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                    <p className="mt-2 text-muted-foreground">Last updated: 1 Jan 2026</p>
                 </header>
             </Animated>
 

@@ -1,3 +1,4 @@
+
 import { Animated, fadeUp } from '@/components/ui/animated';
 import TOC from '@/components/aml/TOC';
 import type { Metadata } from 'next';
@@ -30,7 +31,7 @@ export default function TermsAndConditionsPage() {
                         Terms & Conditions
                     </h1>
                     <p className="mt-2 text-muted-foreground">
-                        Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                        Last updated: 1 Jan 2026
                     </p>
                 </header>
             </Animated>

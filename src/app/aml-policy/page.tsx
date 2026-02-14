@@ -3,7 +3,6 @@
 
 import { Animated, fadeUp } from '@/components/ui/animated';
 import TOC from '@/components/aml/TOC';
-import { useState, useEffect } from 'react';
 
 const SECTIONS = [
     { id: 'introduction', label: 'Introduction' },
@@ -18,12 +17,6 @@ const SECTIONS = [
 ]
 
 export default function AMLPolicyPage() {
-    const [lastUpdated, setLastUpdated] = useState('');
-
-    useEffect(() => {
-        setLastUpdated(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
-    }, []);
-
     return (
         <div className="container mx-auto max-w-6xl px-4 py-16 md:py-24 scroll-smooth">
             <Animated variants={fadeUp}>
@@ -31,7 +24,7 @@ export default function AMLPolicyPage() {
                     <h1 className="font-headline text-3xl font-bold md:text-5xl">
                         Anti-Money Laundering (AML) Policy
                     </h1>
-                    {lastUpdated && <p className="mt-2 text-muted-foreground">Last updated: {lastUpdated}</p>}
+                    <p className="mt-2 text-muted-foreground">Last updated: 1 Jan 2026</p>
                 </header>
             </Animated>
 
