@@ -7,7 +7,7 @@
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+import { z } from 'zod';
 import { Resend } from 'resend';
 
 const SendContactEmailInputSchema = z.object({
@@ -30,21 +30,25 @@ const sendContactEmailFlow = ai.defineFlow(
   },
   async (input) => {
     if (!process.env.RESEND_API_KEY) {
-      console.log('RESEND_API_KEY not found, skipping email sending.');
-      // In a real app, you'd want to handle this more gracefully.
-      // For this prototype, we'll just log it.
-      return;
+      // Throw an error if the API key is not configured.
+      // This will be caught by the frontend and displayed to the user.
+      throw new Error('Email sending is not configured on the server.');
     }
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    await resend.emails.send({
-      from: `${input.name} <onboarding@resend.dev>`, // This must be a verified domain on Resend
+    const { data, error } = await resend.emails.send({
+      from: 'Rust Innovations <onboarding@resend.dev>', // This must be a verified domain on Resend
       to: 'rustinnovationsglobal@gmail.com',
       subject: `New message from ${input.name}: ${input.subject}`,
       reply_to: input.email,
       html: `<p>New message from <strong>${input.name}</strong> (${input.email}):</p>
              <p>${input.message}</p>`
     });
+    
+    if (error) {
+      console.error({error});
+      throw new Error(`Failed to send email: ${error.message}`);
+    }
     
     return;
   }

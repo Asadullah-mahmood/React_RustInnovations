@@ -18,7 +18,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Loader2 } from 'lucide-react';
 import { Animated, fadeUp } from '@/components/ui/animated';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { sendContactEmail } from '@/ai/flows/send-contact-email';
 
 const formSchema = z.object({
@@ -52,13 +52,6 @@ export default function ContactPage() {
     },
   });
 
-  useEffect(() => {
-    if (subjectParam) {
-      form.setValue('subject', subjectParam);
-    }
-  }, [subjectParam, form.setValue]);
-
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
@@ -67,17 +60,18 @@ export default function ContactPage() {
         title: 'Message Sent!',
         description: "Thanks for reaching out. We'll get back to you soon.",
       });
-      form.reset();
-       // Reset subject if it was pre-filled
-      if (subjectParam) {
-        form.setValue('subject', '');
-      }
+      form.reset({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
     } catch (error) {
       console.error('Failed to send contact email:', error);
       toast({
         variant: 'destructive',
         title: 'Uh oh! Something went wrong.',
-        description: 'Could not send your message. Please try again later.',
+        description: error instanceof Error ? error.message : 'Could not send your message. Please try again later.',
       });
     } finally {
       setIsSubmitting(false);
