@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useForm } from 'react-hook-form';
@@ -57,7 +56,7 @@ export default function ContactPage() {
     if (subjectParam) {
       form.setValue('subject', subjectParam);
     }
-  }, [subjectParam, form]);
+  }, [subjectParam, form.setValue]);
 
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
