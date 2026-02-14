@@ -15,9 +15,6 @@ export function Logo({ iconOnly = false }: { iconOnly?: boolean }) {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
         className="h-16 w-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
       >
         <motion.path
           d="M25 80 V20 H50 C75 20, 75 50, 50 50 H35 L65 80"
@@ -26,16 +23,19 @@ export function Logo({ iconOnly = false }: { iconOnly?: boolean }) {
           fill="transparent"
           strokeLinecap="round"
           strokeLinejoin="round"
-          variants={{
-            hidden: { pathLength: 0, opacity: 0 },
-            visible: {
-              pathLength: 1,
-              opacity: 1,
-              transition: {
-                pathLength: { delay: 0.2, type: 'tween', ease: 'easeInOut', duration: 2 },
-                opacity: { delay: 0.2, duration: 0.01 },
-              },
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 1 }}
+          transition={{
+            pathLength: {
+              delay: 0.2,
+              type: 'tween',
+              ease: 'easeInOut',
+              duration: 2,
+              repeat: Infinity,
+              repeatType: 'loop',
+              repeatDelay: 1,
             },
+            opacity: { delay: 0.2, duration: 0.01, repeat: Infinity },
           }}
         />
       </motion.svg>
