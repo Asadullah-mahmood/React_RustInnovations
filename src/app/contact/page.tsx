@@ -18,7 +18,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, MapPin, Loader2 } from 'lucide-react';
 import { Animated, fadeUp } from '@/components/ui/animated';
 import { useSearchParams } from 'next/navigation';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import { sendContactEmail } from '@/ai/flows/send-contact-email';
 
 const formSchema = z.object({
@@ -36,7 +36,7 @@ const formSchema = z.object({
   }),
 });
 
-export default function ContactPage() {
+function ContactFormComponent() {
   const { toast } = useToast();
   const searchParams = useSearchParams();
   const subjectParam = searchParams.get('subject');
@@ -79,6 +79,78 @@ export default function ContactPage() {
   }
 
   return (
+    <Animated as="div" variants={fadeUp} delay={0.4} className="rounded-xl border border-border/20 bg-card/50 p-8 shadow-lg backdrop-blur-sm">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="John Doe" {...field} disabled={isSubmitting} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="john.doe@example.com" {...field} disabled={isSubmitting} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="subject"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Subject</FormLabel>
+                <FormControl>
+                  <Input placeholder="Regarding your services" {...field} disabled={isSubmitting} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Message</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Tell us about your project or inquiry..."
+                    className="min-h-[150px]"
+                    {...field}
+                    disabled={isSubmitting}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit" className="w-full transition-transform duration-300 hover:scale-110" disabled={isSubmitting}>
+            {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Send Message
+          </Button>
+        </form>
+      </Form>
+    </Animated>
+  );
+}
+
+export default function ContactPage() {
+  return (
     <div className="container mx-auto px-4 py-16 md:py-24">
       <Animated as="div" variants={fadeUp} className="text-center">
         <h1 className="font-headline text-4xl font-bold md:text-5xl">Contact Us</h1>
@@ -117,73 +189,13 @@ export default function ContactPage() {
             </div>
         </Animated>
 
-        <Animated as="div" variants={fadeUp} delay={0.4} className="rounded-xl border border-border/20 bg-card/50 p-8 shadow-lg backdrop-blur-sm">
-            <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              <FormField
-                control={form.control}
-                name="name"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="John Doe" {...field} disabled={isSubmitting} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Email</FormLabel>
-                    <FormControl>
-                      <Input placeholder="john.doe@example.com" {...field} disabled={isSubmitting} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="subject"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Subject</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Regarding your services" {...field} disabled={isSubmitting} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="message"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Your Message</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="Tell us about your project or inquiry..."
-                        className="min-h-[150px]"
-                        {...field}
-                        disabled={isSubmitting}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" className="w-full transition-transform duration-300 hover:scale-110" disabled={isSubmitting}>
-                {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-                Send Message
-              </Button>
-            </form>
-          </Form>
-        </Animated>
+        <Suspense fallback={
+          <div className="flex justify-center items-start pt-10">
+            <Loader2 className="h-8 w-8 animate-spin" />
+          </div>
+        }>
+          <ContactFormComponent />
+        </Suspense>
       </div>
     </div>
   );
