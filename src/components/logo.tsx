@@ -9,11 +9,11 @@ export function Logo({ iconOnly = false }: { iconOnly?: boolean }) {
     <Link
       href="/"
       className="flex flex-row items-center gap-1.5 md:gap-1.5 ml-2 md:ml-4"
-      aria-label="Rust Innovations LLC Home"
+      aria-label="Rust Innovations Home"
     >
       <Image
         src="/assets/logo.svg"
-        alt="Rust Innovations LLC Logo"
+        alt="Rust Innovations Logo"
         width={64}
         height={64}
         className="h-16 w-16"
@@ -26,7 +26,7 @@ export function Logo({ iconOnly = false }: { iconOnly?: boolean }) {
         )}
       >
         <span className="font-headline font-bold text-foreground whitespace-nowrap leading-tight text-lg sm:text-xl md:text-2xl md:text-left text-left">
-          Rust Innovations LLC<sup>&trade;</sup>
+          Rust Innovations<sup>&trade;</sup>
         </span>
       </div>
     </Link>

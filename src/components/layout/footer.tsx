@@ -28,6 +28,7 @@ const socialLinks = [
     label: 'TikTok',
     icon: (
       <svg
+        xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className="h-6 w-6 fill-current text-muted-foreground transition-colors hover:text-primary"
       >
@@ -53,10 +54,10 @@ export function Footer() {
           <div className="flex flex-col gap-4 lg:col-span-5">
             <Logo />
              <p className="text-lg font-semibold text-primary">
-              Let’s Build Your Digital Future with Rust Innovations LLC.
+              Let’s Build Your Digital Future with Rust Innovations<sup>®</sup>.
             </p>
             <p className="text-sm text-muted-foreground max-w-md">
-              Rust Innovations LLC is your one-stop digital solution for web and app development, software, courses, e-commerce, and more.
+              Rust Innovations<sup>®</sup> is your one-stop digital solution for web and app development, software, courses, e-commerce, and more.
             </p>
             <div className="flex gap-4">
               {socialLinks.map(link => (
@@ -117,7 +118,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; 2026 Rust Innovations LLC. All rights reserved.</p>
+          <p>&copy; 2026 Rust Innovations. All rights reserved.</p>
         </div>
       </div>
     </footer>
