@@ -4,8 +4,8 @@ import TOC from '@/components/aml/TOC';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Terms & Conditions | Rust Innovations',
-    description: 'Read the Terms and Conditions for using the services and website of Rust Innovations.',
+    title: 'Terms and Conditions',
+    description: 'Read the Terms and Conditions for using the services and website of Rust Innovations. Includes payment terms, delivery policy, and more.',
 };
 
 const SECTIONS = [
@@ -48,10 +48,6 @@ export default function TermsAndConditionsPage() {
                         className="prose prose-invert max-w-none prose-p:text-muted-foreground prose-headings:text-foreground"
                     >
                         <section id="introduction">
-                            <p className="text-foreground">
-                                These Terms & Conditions outline the rules and regulations for using the services provided by <strong>Rust Innovations</strong>. By accessing our services, you agree to comply with these terms.
-                            </p>
-
                             <h2 className="font-headline text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
                             <p className="text-muted-foreground">
                                 These Terms & Conditions outline the rules and regulations for using the services provided by Rust Innovations. By accessing our services, you agree to comply with these terms.
@@ -66,31 +62,31 @@ export default function TermsAndConditionsPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Web & App Development</span>
+                                    <p className="text-muted-foreground">Web & App Development</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Digital Marketing & SEO</span>
+                                    <p className="text-muted-foreground">Digital Marketing & SEO</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Social Media Management & Ads</span>
+                                    <p className="text-muted-foreground">Social Media Management & Ads</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Photography & Video Editing</span>
+                                    <p className="text-muted-foreground">Photography & Video Editing</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">E-commerce Solutions</span>
+                                    <p className="text-muted-foreground">E-commerce Solutions</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Consultancy & Training</span>
+                                    <p className="text-muted-foreground">Consultancy & Training</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Reselling of Digital Tools</span>
+                                    <p className="text-muted-foreground">Reselling of Digital Tools</p>
                                 </li>
                             </ul>
                         </section>
@@ -101,36 +97,36 @@ export default function TermsAndConditionsPage() {
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Advance Payment:</span>
-                                        <span className="text-muted-foreground"> Most services require 100% advance payment unless otherwise stated.</span>
+                                        <h3 className="text-foreground font-medium">Advance Payment:</h3>
+                                        <p className="text-muted-foreground"> Most services require 100% advance payment unless otherwise stated.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Installment Payment:</span>
-                                        <span className="text-muted-foreground"> For certain services, payment is divided into 60% upfront, 20% mid-project, and 20% upon completion. For Crypto OTC services all payment must be in Advance.</span>
+                                        <h3 className="text-foreground font-medium">Installment Payment:</h3>
+                                        <p className="text-muted-foreground"> For certain services, payment is divided into 60% upfront, 20% mid-project, and 20% upon completion. For Crypto OTC services all payment must be in Advance.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Consultancy Fees:</span>
-                                        <span className="text-muted-foreground"> Non-refundable and charged upfront.</span>
+                                        <h3 className="text-foreground font-medium">Consultancy Fees:</h3>
+                                        <p className="text-muted-foreground"> Non-refundable and charged upfront.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Performance-Based Services:</span>
-                                        <span className="text-muted-foreground"> Payments are based on campaign budgets, with specific consultancy fees as mentioned.</span>
+                                        <h3 className="text-foreground font-medium">Performance-Based Services:</h3>
+                                        <p className="text-muted-foreground"> Payments are based on campaign budgets, with specific consultancy fees as mentioned.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">No Refund Policy:</span>
-                                        <span className="text-muted-foreground"> Once a service has started, payments are non-refundable.</span>
+                                        <h3 className="text-foreground font-medium">No Refund Policy:</h3>
+                                        <p className="text-muted-foreground"> Once a service has started, payments are non-refundable.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -142,22 +138,22 @@ export default function TermsAndConditionsPage() {
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Standard Delivery Times:</span>
-                                        <span className="text-muted-foreground"> Delivery timelines are specified for each service. Delays will be communicated in advance.</span>
+                                        <h3 className="text-foreground font-medium">Standard Delivery Times:</h3>
+                                        <p className="text-muted-foreground"> Delivery timelines are specified for each service. Delays will be communicated in advance.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Same-Day Services:</span>
-                                        <span className="text-muted-foreground"> Available for select services with prior approval and full payment.</span>
+                                        <h3 className="text-foreground font-medium">Same-Day Services:</h3>
+                                        <p className="text-muted-foreground"> Available for select services with prior approval and full payment.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Ongoing Services:</span>
-                                        <span className="text-muted-foreground"> Ads and campaigns are managed and optimized on a daily basis.</span>
+                                        <h3 className="text-foreground font-medium">Ongoing Services:</h3>
+                                        <p className="text-muted-foreground"> Ads and campaigns are managed and optimized on a daily basis.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -168,11 +164,11 @@ export default function TermsAndConditionsPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">One round of revisions is included unless otherwise specified.</span>
+                                    <p className="text-muted-foreground">One round of revisions is included unless otherwise specified.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Additional revisions or changes beyond the agreed scope will incur extra charges.</span>
+                                    <p className="text-muted-foreground">Additional revisions or changes beyond the agreed scope will incur extra charges.</p>
                                 </li>
                             </ul>
                         </section>
@@ -182,11 +178,11 @@ export default function TermsAndConditionsPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Ownership of deliverables transfers to the client after full payment.</span>
+                                    <p className="text-muted-foreground">Ownership of deliverables transfers to the client after full payment.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">We retain the right to feature completed projects in our portfolio unless explicitly agreed otherwise.</span>
+                                    <p className="text-muted-foreground">We retain the right to feature completed projects in our portfolio unless explicitly agreed otherwise.</p>
                                 </li>
                             </ul>
                         </section>
@@ -196,11 +192,11 @@ export default function TermsAndConditionsPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">We maintain strict confidentiality regarding all client data and project details.</span>
+                                    <p className="text-muted-foreground">We maintain strict confidentiality regarding all client data and project details.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Any data shared will be used solely for project execution purposes.</span>
+                                    <p className="text-muted-foreground">Any data shared will be used solely for project execution purposes.</p>
                                 </li>
                             </ul>
                         </section>
@@ -210,11 +206,11 @@ export default function TermsAndConditionsPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">We are not liable for any indirect, incidental, or consequential damages arising from the use of our services.</span>
+                                    <p className="text-muted-foreground">We are not liable for any indirect, incidental, or consequential damages arising from the use of our services.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Clients are responsible for providing accurate information and project details.</span>
+                                    <p className="text-muted-foreground">Clients are responsible for providing accurate information and project details.</p>
                                 </li>
                             </ul>
                         </section>
@@ -224,11 +220,11 @@ export default function TermsAndConditionsPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Services can only be canceled before work begins.</span>
+                                    <p className="text-muted-foreground">Services can only be canceled before work begins.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Any payments made prior to cancellation are non-refundable.</span>
+                                    <p className="text-muted-foreground">Any payments made prior to cancellation are non-refundable.</p>
                                 </li>
                             </ul>
                         </section>
@@ -249,15 +245,15 @@ export default function TermsAndConditionsPage() {
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Email:</span>
-                                        <span className="text-muted-foreground"> info@rustinnovations.com</span>
+                                        <h3 className="text-foreground font-medium">Email:</h3>
+                                        <p className="text-muted-foreground"> info@rustinnovations.com</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Phone:</span>
-                                        <span className="text-muted-foreground"> +92 326 4692 997</span>
+                                        <h3 className="text-foreground font-medium">Phone:</h3>
+                                        <p className="text-muted-foreground"> +92 326 4692 997</p>
                                     </div>
                                 </li>
                             </ul>

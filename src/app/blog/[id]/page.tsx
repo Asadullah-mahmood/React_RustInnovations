@@ -25,9 +25,16 @@ export async function generateMetadata(
     }
   }
 
+  const previousImages = (await parent).openGraph?.images || [];
+
   return {
-    title: `${post.title} | Rust Innovations Blog`,
+    title: post.title,
     description: post.excerpt,
+    openGraph: {
+        title: post.title,
+        description: post.excerpt,
+        images: [post.imageUrl, ...previousImages],
+    },
   }
 }
 

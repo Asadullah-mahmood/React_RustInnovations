@@ -3,6 +3,13 @@
 
 import { Animated, fadeUp } from '@/components/ui/animated';
 import TOC from '@/components/aml/TOC';
+import type { Metadata } from 'next';
+
+const metadata: Metadata = {
+    title: 'Anti-Money Laundering (AML) Policy',
+    description: 'Read the Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) policy of Rust Innovations to understand our commitment to compliance.',
+};
+
 
 const SECTIONS = [
     { id: 'introduction', label: 'Introduction' },

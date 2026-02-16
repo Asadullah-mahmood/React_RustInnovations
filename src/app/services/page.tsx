@@ -7,14 +7,14 @@ import { Button } from '@/components/ui/button';
 import { Animated, scaleUp, fadeUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
-    title: 'Our Services | Rust Innovations',
-    description: 'Explore the comprehensive range of professional services offered by Rust Innovations, from digital strategy to custom development and beyond.',
+    title: 'Our Services | Web Development, SEO, & Digital Strategy',
+    description: 'Explore our services: web/app development, e-commerce, SEO, digital marketing, crypto OTC, and more. Request a quote today.',
 };
 
 export default function ServicesPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-24">
-      <Animated as="div" variants={fadeUp} className="text-center">
+      <Animated as="section" variants={fadeUp} className="text-center">
         <h1 className="font-headline text-4xl font-bold md:text-5xl">Our Services</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           We provide a wide array of services designed to empower your business and drive growth in the digital age.

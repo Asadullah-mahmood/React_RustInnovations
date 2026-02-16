@@ -12,18 +12,18 @@ import { AISummarizer } from '@/components/media-center/ai-summarizer';
 import { Inbox } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Media & Blog | Rust Innovations',
-    description: 'Stay up-to-date with the latest news, announcements, and insights from Rust Innovations. Explore our articles and company updates.',
+    title: 'Media Center & Blog | Tech Insights and News',
+    description: 'Stay updated with the latest news, articles, and AI-powered insights from Rust Innovations. Explore our blog and use our AI article summarizer.',
 };
 
 export default function MediaCenterPage() {
     const heroImage = PlaceHolderImages.find(p => p.id === 'media-center-hero');
-    const postsToShow = false; // Set to false to show "Item not found"
+    const postsToShow = blogPosts.length > 0;
 
     return (
         <div className="bg-background">
             {/* Hero Section */}
-            <div className="relative h-[40vh] w-full text-white">
+            <section className="relative h-[40vh] w-full text-white">
                 {heroImage && (
                     <Image
                         src={heroImage.imageUrl}
@@ -45,13 +45,13 @@ export default function MediaCenterPage() {
                         </p>
                     </Animated>
                 </div>
-            </div>
+            </section>
 
             {/* AI Summarizer Section */}
             <AISummarizer />
 
             {/* Blog Posts Section */}
-            <div className="container mx-auto px-4 pb-16 md:pb-24">
+            <section className="container mx-auto px-4 pb-16 md:pb-24">
                  <Animated variants={fadeUp} className="text-center mb-16">
                     <h2 className="font-headline text-3xl font-bold md:text-4xl">From the Blog</h2>
                     <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -107,7 +107,7 @@ export default function MediaCenterPage() {
                         </div>
                     </Animated>
                 )}
-            </div>
+            </section>
         </div>
     );
 }

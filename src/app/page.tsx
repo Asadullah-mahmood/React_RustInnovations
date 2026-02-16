@@ -79,7 +79,6 @@ const Home = () => {
               <h1
                 className="relative select-none font-headline font-extrabold text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-[6rem] leading-[1.05] animated-pinkred-gradient group"
                 style={{ fontFamily: 'Inter, PT Sans, Space Grotesk, sans-serif' }}
-                id="home-rust-innovations-heading"
               >
                 Rust Innovations
               </h1>

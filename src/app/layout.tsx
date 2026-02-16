@@ -11,11 +11,11 @@ import dynamic from 'next/dynamic';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Rust Innovations',
+    default: 'Rust Innovations | Digital Solutions & Tech Services',
     template: '%s | Rust Innovations',
   },
   description:
-    'Rust Innovations is your one-stop solution for all digital needs. We offer freelancing services, including web and app development, paid software solutions, learning courses, e-commerce store creation, and more.',
+    'Your one-stop solution for digital needs: web and app development, paid software, e-commerce, digital marketing, and expert consultancy. Let\'s build your digital future.',
 };
 
 export default function RootLayout({

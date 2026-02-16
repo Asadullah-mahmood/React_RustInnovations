@@ -9,14 +9,14 @@ import { format } from 'date-fns';
 import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
 
 export const metadata: Metadata = {
-    title: 'Blog | Rust Innovations',
-    description: 'Insights, articles, and news from the team at Rust Innovations.',
+    title: 'Blog | Tech Trends, Insights, and Articles',
+    description: 'Read the latest from Rust Innovations. Explore articles on web development, UI/UX design, technology trends, and digital strategy.',
 };
 
 export default function BlogPage() {
     return (
         <div className="container mx-auto px-4 py-16 md:py-24">
-            <Animated variants={fadeUp} className="text-center">
+            <Animated as="section" variants={fadeUp} className="text-center">
                 <h1 className="font-headline text-4xl font-bold md:text-5xl">From the Blog</h1>
                 <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                     Insights, articles, and news from the team at Rust Innovations.
@@ -27,7 +27,7 @@ export default function BlogPage() {
                 {blogPosts.map((post, i) => (
                     <Animated key={post.id} variants={scaleUp} delay={i * 0.1}>
                         <Card className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/10">
-                             <Link href={`/blog/${post.id}`} className="block">
+                             <Link href={`/blog/${post.id}`} className="block" aria-label={`Read more about ${post.title}`}>
                                 <div className="relative h-56 w-full">
                                     <Image
                                         src={post.imageUrl}

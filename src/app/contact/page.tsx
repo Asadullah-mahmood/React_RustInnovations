@@ -1,12 +1,19 @@
+
 import { Suspense } from 'react';
 import { Mail, Phone, MapPin, Loader2 } from 'lucide-react';
 import { Animated, fadeUp } from '@/components/ui/animated';
 import { ContactForm } from './form';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us | Get in Touch with Rust Innovations',
+  description: 'Have a project or question? Contact Rust Innovations via our form, email, or phone. We\'d love to hear from you.',
+};
 
 export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-16 md:py-24">
-      <Animated as="div" variants={fadeUp} className="text-center">
+      <Animated as="section" variants={fadeUp} className="text-center">
         <h1 className="font-headline text-4xl font-bold md:text-5xl">Contact Us</h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
           Have a project in mind or just want to say hello? We&apos;d love to hear from you.
@@ -26,13 +33,13 @@ export default function ContactPage() {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                       <Mail className="h-6 w-6 text-primary" />
                     </div>
-                    <span>Info@rustinnovations.com</span>
+                    <a href="mailto:Info@rustinnovations.com" className="hover:text-primary">Info@rustinnovations.com</a>
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
-                    <span>(+92)326-4692997</span>
+                    <a href="tel:+923264692997" className="hover:text-primary">(+92)326-4692997</a>
                 </div>
                 <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">

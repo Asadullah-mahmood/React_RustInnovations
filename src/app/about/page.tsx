@@ -10,8 +10,8 @@ import { Animated, fadeUp, scaleUp } from '@/components/ui/animated';
 import { cn } from '@/lib/utils';
 
 export const metadata: Metadata = {
-    title: 'About Us',
-    description: 'Learn about the mission, values, and dedicated team behind Rust Innovations, driving innovation and excellence in the industry.',
+    title: 'About Us | Our Mission, Values, and Team',
+    description: 'Learn about the mission, values, and dedicated team behind Rust Innovations, driving innovation and excellence in the tech industry.',
 };
 
 const values = [
@@ -60,7 +60,7 @@ export default function AboutPage() {
     return (
         <div className="bg-background">
             {/* Hero Section */}
-            <Animated as="div" variants={fadeUp} className="container mx-auto px-4 py-16 text-center md:py-24">
+            <Animated as="section" variants={fadeUp} className="container mx-auto px-4 py-16 text-center md:py-24">
                 <h1 className="font-headline text-4xl font-bold md:text-5xl">
                     About Rust Innovations
                 </h1>

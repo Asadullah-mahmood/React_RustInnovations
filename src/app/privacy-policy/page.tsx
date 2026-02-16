@@ -4,8 +4,8 @@ import TOC from '@/components/aml/TOC';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | Rust Innovations',
-    description: 'Read the Privacy Policy of Rust Innovations to understand how we collect, use, and protect your personal information.',
+    title: 'Privacy Policy',
+    description: 'Read the Privacy Policy of Rust Innovations to understand how we collect, use, and protect your personal information when you use our services.',
 };
 
 const SECTIONS = [
@@ -56,22 +56,22 @@ export default function PrivacyPolicyPage() {
                                 <li className="flex items-start">
                                     <span className=" mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Personal Information:</span>
-                                        <span className="text-muted-foreground"> Name, email address, phone number, billing information, and other details you provide voluntarily.</span>
+                                        <h3 className="text-foreground font-medium">Personal Information:</h3>
+                                        <p className="text-muted-foreground"> Name, email address, phone number, billing information, and other details you provide voluntarily.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Usage Data:</span>
-                                        <span className="text-muted-foreground"> Information about how you use our website, services, and tools, including IP address, browser type, and pages visited.</span>
+                                        <h3 className="text-foreground font-medium">Usage Data:</h3>
+                                        <p className="text-muted-foreground"> Information about how you use our website, services, and tools, including IP address, browser type, and pages visited.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Payment Information:</span>
-                                        <span className="text-muted-foreground"> Collected for processing transactions but not stored by us. We use secure third-party payment processors.</span>
+                                        <h3 className="text-foreground font-medium">Payment Information:</h3>
+                                        <p className="text-muted-foreground"> Collected for processing transactions but not stored by us. We use secure third-party payment processors.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -85,23 +85,23 @@ export default function PrivacyPolicyPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Provide and deliver services as requested.</span>
+                                    <p className="text-muted-foreground">Provide and deliver services as requested.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Process payments and manage orders.</span>
+                                    <p className="text-muted-foreground">Process payments and manage orders.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Communicate updates, offers, and relevant information.</span>
+                                    <p className="text-muted-foreground">Communicate updates, offers, and relevant information.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Improve our website, services, and customer experience.</span>
+                                    <p className="text-muted-foreground">Improve our website, services, and customer experience.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Comply with legal obligations and resolve disputes.</span>
+                                    <p className="text-muted-foreground">Comply with legal obligations and resolve disputes.</p>
                                 </li>
                             </ul>
                         </section>
@@ -115,22 +115,22 @@ export default function PrivacyPolicyPage() {
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Service Providers:</span>
-                                        <span className="text-muted-foreground"> To trusted partners who help us deliver our services.</span>
+                                        <h3 className="text-foreground font-medium">Service Providers:</h3>
+                                        <p className="text-muted-foreground"> To trusted partners who help us deliver our services.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Legal Obligations:</span>
-                                        <span className="text-muted-foreground"> If required by law or in response to legal processes.</span>
+                                        <h3 className="text-foreground font-medium">Legal Obligations:</h3>
+                                        <p className="text-muted-foreground"> If required by law or in response to legal processes.</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Business Transfers:</span>
-                                        <span className="text-muted-foreground"> In case of a merger, acquisition, or asset sale.</span>
+                                        <h3 className="text-foreground font-medium">Business Transfers:</h3>
+                                        <p className="text-muted-foreground"> In case of a merger, acquisition, or asset sale.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -158,15 +158,15 @@ export default function PrivacyPolicyPage() {
                             <ul className="space-y-2 mt-4">
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Access, update, or delete your personal information.</span>
+                                    <p className="text-muted-foreground">Access, update, or delete your personal information.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Opt-out of receiving marketing communications.</span>
+                                    <p className="text-muted-foreground">Opt-out of receiving marketing communications.</p>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
-                                    <span className="text-muted-foreground">Request details about how we process your data.</span>
+                                    <p className="text-muted-foreground">Request details about how we process your data.</p>
                                 </li>
                             </ul>
                             <p className="text-muted-foreground mt-4">
@@ -198,15 +198,15 @@ export default function PrivacyPolicyPage() {
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Email:</span>
-                                        <span className="text-muted-foreground"> info@rustinnovations.com</span>
+                                        <h3 className="text-foreground font-medium">Email:</h3>
+                                        <p className="text-muted-foreground"> info@rustinnovations.com</p>
                                     </div>
                                 </li>
                                 <li className="flex items-start">
                                     <span className="  mr-2 mt-1">•</span>
                                     <div>
-                                        <span className="text-foreground font-medium">Phone:</span>
-                                        <span className="text-muted-foreground"> +92 326 4692 997</span>
+                                        <h3 className="text-foreground font-medium">Phone:</h3>
+                                        <p className="text-muted-foreground"> +92 326 4692 997</p>
                                     </div>
                                 </li>
                             </ul>
